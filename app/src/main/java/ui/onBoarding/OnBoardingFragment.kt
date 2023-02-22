@@ -1,5 +1,6 @@
 package ui.onBoarding
 
+import adapter.OnBoardingPagerAdapter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +18,8 @@ import ui.base.BaseFragment
 @AndroidEntryPoint
 class OnBoardingFragment : BaseFragment<FragmentOnboardingBinding, OnBoardingEvent, OnBoardingAction, OnBoardingViewModel>(R.layout.fragment_onboarding) {
 
+
+    private lateinit var onBoardingPagerAdapter: OnBoardingPagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

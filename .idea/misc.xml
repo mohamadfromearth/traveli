@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/layout/activity_base.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_onboarding.xml" value="0.3578125" />
+        <entry key="app/src/main/res/layout/fragment_onboarding_slide_one.xml" value="0.28125" />
         <entry key="app/src/main/res/layout/tv_tab.xml" value="0.17760416666666667" />
         <entry key="app/src/main/res/menu/navigation_menu.xml" value="0.17760416666666667" />
       </map>
