@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="app"
+            type="main.ApplicationClass" />
+
+        <variable
+            name="data"
+            type="domain.model.Country" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cv_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="?attr/colorBackground2"
+        app:cardCornerRadius="@dimen/radiusLarge"
+        android:layout_marginTop="@dimen/paddingLarge">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/iv_country_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="centerCrop" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_country_name"
+                fonti="@{app.m.fontMedium}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/paddingMedium"
+                android:layout_marginTop="@dimen/paddingLarge"
+                android:text="@{data.name}"
+                android:textColor="?attr/colorText0"
+                android:textSize="@dimen/textLargeXX" />
+
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</layout>
+
+

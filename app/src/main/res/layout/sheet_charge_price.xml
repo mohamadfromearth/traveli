@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="app"
+                type="main.ApplicationClass" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sheetCharge_clParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/md_transparent_1000">
+
+        <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:src="?attr/colorBackground1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearance="@style/CircularImageView.BottomSheet" />
+
+        <ImageView
+                android:id="@+id/sheetCharge_ivIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="@dimen/paddingLarge"
+                android:src="@drawable/ic_money"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="?attr/colorPrimary" />
+
+        <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/sheetCharge_tvTitle"
+                style="@style/GeneralText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/paddingLarge"
+                android:gravity="center"
+                android:text="@{app.m.chargeAccount}"
+                android:textSize="@dimen/textLarge"
+                app:layout_constraintTop_toBottomOf="@id/sheetCharge_ivIcon"
+                tools:text="Charge Account" />
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/sheetCharge_rvPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/paddingMedium"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/paddingMedium"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/sheetCharge_tvTitle"
+                tools:listitem="@layout/row_charge_price" />
+
+        <RadioButton
+                android:id="@+id/sheetCharge_rbCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/paddingLargeX"
+                android:minWidth="0dp"
+                android:buttonTint="?attr/colorPrimary"
+                android:minHeight="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/sheetCharge_tlCustom"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/sheetCharge_tlCustom" />
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/sheetCharge_tlCustom"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/paddingMedium"
+                android:layout_marginEnd="@dimen/paddingLargeXXX"
+                app:fonte="@{app.m.fontMedium}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/sheetCharge_rbCustom"
+                app:layout_constraintTop_toBottomOf="@id/sheetCharge_rvPrice">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sheetCharge_etCustom"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@{app.m.customAmount}"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    app:fonte="@{app.m.fontMedium}"
+                    tools:hint="Custom amount"
+                    tools:text="Hello" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/sheetCharge_tvError"
+                style="@style/GeneralText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/paddingMedium"
+                android:gravity="center"
+                android:textColor="@color/negative"
+                app:fonti="@{app.m.fontMedium}"
+                app:layout_constraintTop_toBottomOf="@id/sheetCharge_tlCustom"
+                tools:text="This is an error!!" />
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/sheetCharge_btnPositive"
+                style="@style/GeneralButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/paddingMedium"
+                android:layout_marginBottom="@dimen/paddingLarge"
+                android:text="@{app.m.confirm}"
+                app:backgroundTint="@color/positive"
+                app:fonti="@{app.m.fontMedium}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/sheetCharge_btnNegative"
+                app:layout_constraintTop_toBottomOf="@id/sheetCharge_tvError"
+                tools:text="Confirm" />
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/sheetCharge_btnNegative"
+                style="@style/GeneralButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{app.m.cancel}"
+                app:backgroundTint="@color/negative"
+                app:fonti="@{app.m.fontMedium}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/sheetCharge_btnPositive"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/sheetCharge_btnPositive"
+                tools:text="Cancel" />
+
+        <FrameLayout
+                android:id="@+id/sheetCharge_flLoading"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="#22000000"
+                android:clickable="true"
+                android:elevation="10dp"
+                android:focusable="true"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

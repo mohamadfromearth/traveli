@@ -1,0 +1,32 @@
+package domain.usecase.travel
+
+data class TravelUseCases(
+    val getTrendingListUseCase: GetTrendingListUseCase,
+    val getBannerUseCase: GetBannerUseCase,
+    val getNewTravelListUseCase: GetNewTravelListUseCase,
+    val searchTravelsUseCase: SearchTravelsUseCase,
+    val getTravelDetailUseCase: GetTravelDetailUseCase,
+    val getSelectedTravelUseCase: GetSelectedTravelUseCase,
+    val createTravelUseCase: CreateTravelUseCase,
+    val updateTravelUseCase: UpdateTravelUseCase,
+    val deleteTravelUseCase: DeleteTravelUseCase,
+    val publishTravelUseCase: PublicTravelUseCase,
+    val getTravelSummaryUseCase: GetTravelSummaryUseCase,
+    val createTravelItemUseCase: CreateTravelItemUseCase,
+    val updateTravelItemUseCase: UpdateTravelItemUseCase,
+    val deleteTravelItemUseCase: DeleteTravelItemUseCase,
+    val uploadFileUseCase: UploadFileUseCase,
+    val createLocalTravelUseCase: CreateLocalTravelUseCase,
+    val createLocalTravelItemUseCase: CreateLocalTravelItemUseCase,
+    val getLocalTravelPreviewListUseCase: GetLocalTravelPreviewListUseCase,
+    val getLocalTravelItemListUseCase: GetLocalTravelItemListUseCase,
+    val updateLocalTravelUseCase: UpdateLocalTravelUseCase,
+    val updateLocalTravelItemUseCase: UpdateLocalTravelItemUseCase,
+    val deleteLocalTravelUseCase: DeleteLocalTravelUseCase,
+    val deleteLocalTravelItemUseCase: DeleteLocalTravelItemUseCase,
+    val addCitiesToTravelUseCase: AddCitiesToTravelUseCase,
+    val deleteTravelCitiesUseCase: DeleteTravelCitiesUseCase,
+    val addTagsToTravelUseCase: AddTagsToTravelUseCase,
+    val deleteTravelTagsUseCase: DeleteTravelTagsUseCase,
+    val toggleBookMarkUseCase: ToggleBookmarkUseCase
+)
