@@ -7,4 +7,10 @@ import javax.inject.Inject
 
 @HiltViewModel
 class OnBoardingViewModel @Inject constructor(app:ApplicationClass):BaseViewModel<OnBoardingEvent,OnBoardingAction>(app) {
+
+
+
+
+
+
 }

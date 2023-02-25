@@ -45,6 +45,7 @@ class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
     override val owned: String = "Owned"
     override val marked: String = "Marked"
 
+
     //Profile
     override val confirm: String = "Confirm"
     override val cancel: String = "Cancel"
@@ -103,5 +104,8 @@ class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
     override val doYouWannaDeleteThisItem: String = "Do you wanna delete this item?"
     override val deleteItem: String = "Delete item"
     override val someFilesAreBeingUploadedPleaseWait: String = "Some files are being uploaded please wait"
+
+    // common
+    override val skip: String = "Skip"
 
 }

@@ -5,13 +5,14 @@
       <map>
         <entry key="app/src/main/res/layout/activity_base.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_onboarding.xml" value="0.3578125" />
-        <entry key="app/src/main/res/layout/fragment_onboarding_slide_one.xml" value="0.28125" />
+        <entry key="app/src/main/res/layout/fragment_onboarding_slide_one.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/sheet_edit.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/tv_tab.xml" value="0.17760416666666667" />
         <entry key="app/src/main/res/menu/navigation_menu.xml" value="0.17760416666666667" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

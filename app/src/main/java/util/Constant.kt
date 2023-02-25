@@ -45,6 +45,10 @@ object Constant {
     const val CON_ADD_TRAVEL_LINK = 1
 
 
+    //OnBoarding
+    const val CON_ON_BOARDING_SLIDES_COUNT = 4
+
+
     enum class Languages(val value: String) {
         FA("FA"),
         EN("EN"),

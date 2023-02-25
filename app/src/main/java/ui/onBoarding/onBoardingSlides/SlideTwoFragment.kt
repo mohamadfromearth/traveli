@@ -7,25 +7,18 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.xodus.traveli.R
-import com.xodus.traveli.databinding.FragmentSlideOneBinding
+import com.xodus.traveli.databinding.FragmentSlideTwoBinding
 
-class SlideOneFragment() : Fragment() {
+class SlideTwoFragment : Fragment() {
 
-
-    private var _binding: FragmentSlideOneBinding? = null
-    private val binding: FragmentSlideOneBinding
+    private var _binding: FragmentSlideTwoBinding? = null
+    private val binding: FragmentSlideTwoBinding
         get() = _binding!!
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_slide_one, container, false)
-
+        _binding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_slide_two, container, false)
         return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
 

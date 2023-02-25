@@ -6,7 +6,6 @@
         <item name="colorPrimary">@color/darkBlueColorPrimary</item>
         <item name="colorPrimaryDark">@color/darkBlueColorPrimaryDark</item>
         <item name="colorAccent">@color/darkBlueColorAccent</item>
-
         <item name="colorText0">@color/darkBlueText0</item>
         <item name="colorText1">@color/darkBlueText1</item>
         <item name="colorText2">@color/darkBlueText2</item>
