@@ -113,6 +113,21 @@ interface LanguageInterface {
     // Common
     val skip: String
 
+
+    // OnBoarding
+    val firstSlideTitle1: String
+    val firstSlideTitle2: String
+    val firstSlideDescription: String
+    val secondSlideTitle1: String
+    val secondSlideTitle2: String
+    val secondSlideDescription: String
+    val thirdSlideTitle1: String
+    val thirdSlideTitle2: String
+    val thirdSlideDescription: String
+    val forthSlideTitle1: String
+    val forthSlideTitle2: String
+    val continueToApp: String
+
     fun priceCannotBeLowerThanX(value: String) = "$priceCannotBeLowerThanX1 $value $priceCannotBeLowerThanX2"
     fun priceCannotBeHigherThanX(value: String) = "$priceCannotBeHigherThanX1 $value $priceCannotBeHigherThanX2"
     fun confirmCheckoutDesc(value: String) = "$confirmCheckoutDesc1 $value $confirmCheckoutDesc2"

@@ -108,4 +108,20 @@ class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
     // common
     override val skip: String = "Skip"
 
+
+    // OnBoarding
+    override val firstSlideTitle1: String = "Expectacular"
+    override val firstSlideTitle2: String = "Experiences"
+    override val firstSlideDescription: String = "It's been six days since last time I saw your face"
+    override val secondSlideTitle1: String = "Expectacular"
+    override val secondSlideTitle2: String = "Experiences"
+    override val secondSlideDescription: String = "It's been six days since last time I saw your face"
+    override val thirdSlideTitle1: String = "Expectacular"
+    override val thirdSlideTitle2: String = "Experiences"
+    override val thirdSlideDescription: String = "It's been six days since last time I saw your face"
+    override val forthSlideTitle1: String = "Let's get"
+    override val forthSlideTitle2: String = "Started"
+    override val continueToApp: String = "Continue to app >"
+
+
 }

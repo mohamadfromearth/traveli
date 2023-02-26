@@ -1,7 +1,9 @@
 package ui.base
 
 import android.os.Bundle
+import android.view.View
 import androidx.core.view.isVisible
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.xodus.traveli.R
@@ -29,7 +31,7 @@ class BaseActivity : ThemeAwareActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.baseActivity_fragment) as NavHostFragment
         //NavigationUI.setupWithNavController(binding.baseNvNavigation, navHostFragment.navController)
         setLoading(false)
-       // setNavigationTabs()
+        // setNavigationTabs()
 
 
         binding.baseNvNavigation.setOnItemSelectedListener { item ->
@@ -38,6 +40,15 @@ class BaseActivity : ThemeAwareActivity() {
 
             return@setOnItemSelectedListener true
         }
+
+        findNavController(R.id.baseActivity_fragment).addOnDestinationChangedListener { _, destination, _ ->
+            var bottomNavVisibility = View.VISIBLE
+            when (destination.id) {
+                R.id.onBoardingFragment -> bottomNavVisibility = View.GONE
+            }
+            binding.baseNvNavigation.visibility = bottomNavVisibility
+        }
+
     }
 
     override fun onDestroy() {

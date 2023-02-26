@@ -6,6 +6,7 @@
     <item name="paddingLargeX" type="dimen">16dp</item>
     <item name="paddingLargeXX" type="dimen">20dp</item>
     <item name="paddingLargeXXX" type="dimen">24dp</item>
+    <item name="paddingLargeXXXXX" type="dimen">34dp</item>
     <item name="paddingSectionTitleTop" type="dimen">24dp</item>
     <item name="paddingSectionContentTop" type="dimen">12dp</item>
     <item name="paddingSectionContentSides" type="dimen">12dp</item>
@@ -33,6 +34,7 @@
     <item name="textLarge" type="dimen">14sp</item>
     <item name="textLargeX" type="dimen">16sp</item>
     <item name="textLargeXX" type="dimen">20sp</item>
+    <item name="textLargeXXX" type="dimen">32sp</item>
 
     <!--Placeholder Sizes-->
     <item name="placeholderHeightSmall" type="dimen">6dp</item>

@@ -47,6 +47,7 @@ object Constant {
 
     //OnBoarding
     const val CON_ON_BOARDING_SLIDES_COUNT = 4
+    const val KEY_ON_BOARDING_POSITION = "ON_BOARDING_POS"
 
 
     enum class Languages(val value: String) {

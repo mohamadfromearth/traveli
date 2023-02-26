@@ -4,7 +4,7 @@
     <color name="darkBlueColorPrimary">#AD1457</color>
     <color name="darkBlueColorPrimaryDark">#880E4F</color>
     <color name="darkBlueColorAccent">#FFEB3B</color>
-    <color name="darkBlueBackground0">#242424</color>
+    <color name="darkBlueBackground0">#1E1E1E</color>
     <color name="darkBlueBackground1">#484848</color>
     <color name="darkBlueBackground2">#686868</color>
     <color name="darkBlueText0">#FFFFFF</color>
@@ -19,7 +19,7 @@
     <color name="lightPinkColorPrimary">#F48FB1</color>
     <color name="lightPinkColorPrimaryDark">#EC407A</color>
     <color name="lightPinkColorAccent">#FFEB3B</color>
-    <color name="lightPinkBackground0">#DBDBDB</color>
+    <color name="lightPinkBackground0">#FFFFFF</color>
     <color name="lightPinkBackground1">#FFFFFF</color>
     <color name="lightPinkBackground2">#B7B7B7</color>
     <color name="lightPinkText0">#000000</color>
