@@ -44,7 +44,11 @@ class BaseActivity : ThemeAwareActivity() {
         findNavController(R.id.baseActivity_fragment).addOnDestinationChangedListener { _, destination, _ ->
             var bottomNavVisibility = View.VISIBLE
             when (destination.id) {
-                R.id.onBoardingFragment -> bottomNavVisibility = View.GONE
+                R.id.onBoardingFragment ->{
+                    bottomNavVisibility = View.GONE
+                    setFullScreen(true)
+                }
+                else -> setFullScreen(false)
             }
             binding.baseNvNavigation.visibility = bottomNavVisibility
         }

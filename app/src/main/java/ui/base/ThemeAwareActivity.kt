@@ -27,28 +27,38 @@ open class ThemeAwareActivity : AppCompatActivity() {
         //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
         //            window.navigationBarColor = ContextCompat.getColor(baseContext, if (themeManager.themeIsDark) R.color.md_black_1000 else R.color.md_white_1000)
         //        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            window.navigationBarDividerColor = ContextCompat.getColor(baseContext, if (app.themeManager.themeIsDark) R.color.md_white_1000 else R.color.md_black_1000)
+        }
+    }
+
+    fun setFullScreen(isFullScreen: Boolean) {
         window.decorView.apply {
+            if (isFullScreen) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    windowInsetsController?.let {
+                        it.hide(android.view.WindowInsets.Type.statusBars())
+                        it.hide(WindowInsets.Type.navigationBars())
+                    }
+                } else {
+                    systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+                    systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
+                }
+            } else {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    windowInsetsController?.let {
+                        it.show(android.view.WindowInsets.Type.statusBars())
+                        it.show(WindowInsets.Type.navigationBars())
+                    }
+                } else {
+                    systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
+                    systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
+                }
+            }
             // Hide both the navigation bar and the status bar.
             // SYSTEM_UI_FLAG_FULLSCREEN is only available on Android 4.1 and higher, but as
             // a general rule, you should design your app to hide the status bar whenever you
             // hide the navigation bar.
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                windowInsetsController?.let {
-                    it.hide(android.view.WindowInsets.Type.statusBars())
-                    it.hide(WindowInsets.Type.navigationBars())
-                }
-            } else {
-                systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
-                systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
-            }
-        }
-
-
-
-
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-            window.navigationBarDividerColor = ContextCompat.getColor(baseContext, if (app.themeManager.themeIsDark) R.color.md_white_1000 else R.color.md_black_1000)
         }
     }
 

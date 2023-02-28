@@ -30,6 +30,7 @@ class OnBoardingPagerFragment() : Fragment() {
     private var title2Text = ""
     private var descriptionText = ""
     private var textColor = 0
+    private var backgroundColor = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,82 +49,94 @@ class OnBoardingPagerFragment() : Fragment() {
         log("position")
 
         binding.apply {
-            position?.let {
-                when (it) {
-                    0 -> {
-                        cityImage = R.drawable.london
-                        title1Text = app.m.firstSlideTitle1
-                        title2Text = app.m.firstSlideTitle2
-                        descriptionText = app.m.firstSlideDescription
-                        view.setBackgroundColor(getColor(R.color.lightPinkBackground0))
-                        textColor = getColor(R.color.lightPinkText0)
-                        travelyLogo = R.drawable.union
-                    }
-                    1 -> {
-                        cityImage = R.drawable.china
-                        title1Text = app.m.secondSlideTitle1
-                        title2Text = app.m.secondSlideTitle2
-                        descriptionText = app.m.secondSlideDescription
-                        view.setBackgroundColor(getColor(R.color.darkBlueBackground0))
-                        textColor = getColor(R.color.darkBlueText0)
-                        travelyLogo = R.drawable.union_white
-                    }
-                    2 -> {
-                        cityImage = R.drawable.tajmahal
-                        title1Text = app.m.thirdSlideTitle1
-                        title2Text = app.m.thirdSlideTitle2
-                        descriptionText = app.m.thirdSlideDescription
-                        view.setBackgroundColor(getColor(R.color.lightPinkBackground0))
-                        textColor = getColor(R.color.lightPinkText0)
-                        travelyLogo = R.drawable.union
-                    }
-                    3 -> {
-                        cityImage = R.drawable.jungle
-                        title1Text = app.m.forthSlideTitle1
-                        title2Text = app.m.forthSlideTitle2
-                        view.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.darkBlueBackground0))
-                        textColor = getColor(R.color.darkBlueText0)
-                        travelyLogo = R.drawable.union_white
-                    }
+            initialDataByPosition()
+            loadImages()
+            setUpTextViews()
+            setUpOnClickListener()
+            view.setBackgroundColor(backgroundColor)
+        }
+    }
+
+    private fun initialDataByPosition() {
+        position?.let {
+            when (it) {
+                0 -> {
+                    cityImage = R.drawable.london
+                    title1Text = app.m.firstSlideTitle1
+                    title2Text = app.m.firstSlideTitle2
+                    descriptionText = app.m.firstSlideDescription
+                    backgroundColor = getColor(R.color.lightPinkBackground0)
+                    textColor = getColor(R.color.lightPinkText0)
+                    travelyLogo = R.drawable.union
                 }
+                1 -> {
+                    cityImage = R.drawable.china
+                    title1Text = app.m.secondSlideTitle1
+                    title2Text = app.m.secondSlideTitle2
+                    descriptionText = app.m.secondSlideDescription
+                    backgroundColor = getColor(R.color.darkBlueBackground0)
+                    textColor = getColor(R.color.darkBlueText0)
+                    travelyLogo = R.drawable.union_white
+                }
+                2 -> {
+                    cityImage = R.drawable.tajmahal
+                    title1Text = app.m.thirdSlideTitle1
+                    title2Text = app.m.thirdSlideTitle2
+                    descriptionText = app.m.thirdSlideDescription
+                    backgroundColor = getColor(R.color.lightPinkBackground0)
+                    textColor = getColor(R.color.lightPinkText0)
+                    travelyLogo = R.drawable.union
+                }
+                3 -> {
+                    cityImage = R.drawable.jungle
+                    title1Text = app.m.forthSlideTitle1
+                    title2Text = app.m.forthSlideTitle2
+                    backgroundColor = getColor(R.color.darkBlueBackground0)
+                    textColor = getColor(R.color.darkBlueText0)
+                    travelyLogo = R.drawable.union_white
+                }
+            }
+        }
+    }
+
+    private fun FragmentOnBoardingSlidesBinding.loadImages() {
+        if (position != 1) {
+            ivTravelyLogo.load(travelyLogo) {
+                scale(Scale.FILL)
+                allowHardware(false)
             }
 
 
-
-
-            if (position != 1) {
-                ivTravelyLogo.load(travelyLogo) {
-                    scale(Scale.FILL)
-                    allowHardware(false)
-                }
-
-
-                ivCity.load(cityImage) {
-                    scale(Scale.FILL)
-                    allowHardware(false)
-                }
+            ivCity.load(cityImage) {
+                scale(Scale.FILL)
+                allowHardware(false)
             }
+        }
+    }
 
+    private fun FragmentOnBoardingSlidesBinding.setUpTextViews() {
+        btnSkip.typeface = app.m.fontMedium
+        btnSkip.setTextColor(textColor)
+        tvTitle1.typeface = app.m.fontLight
+        tvTitle1.setTextColor(textColor)
+        tvTitle1.text = title1Text
+        tvTitle2.typeface = app.m.fontBold
+        tvTitle2.text = title2Text
+        tvTitle2.setTextColor(textColor)
+        tvDescription.typeface = app.m.fontBold
+        tvDescription.setTextColor(textColor)
+        tvDescription.text = descriptionText
+        tvContinueToApp.typeface = app.m.fontBold
+        tvContinueToApp.text = app.m.continueToApp
+        tvContinueToApp.isVisible = position == 3
+    }
 
-            btnSkip.typeface = app.m.fontMedium
-            btnSkip.setTextColor(textColor)
-            tvTitle1.typeface = app.m.fontLight
-            tvTitle1.setTextColor(textColor)
-            tvTitle1.text = title1Text
-            tvTitle2.typeface = app.m.fontBold
-            tvTitle2.text = title2Text
-            tvTitle2.setTextColor(textColor)
-            tvDescription.typeface = app.m.fontBold
-            tvDescription.setTextColor(textColor)
-            tvDescription.text = descriptionText
-            tvContinueToApp.typeface = app.m.fontBold
-            tvContinueToApp.text = app.m.continueToApp
-
-            tvContinueToApp.isVisible = position == 3
-
-            btnSkip.setOnClickListener {
-                findNavController().navigate(R.id.action_to_home_fragment)
-            }
+    private fun FragmentOnBoardingSlidesBinding.setUpOnClickListener() {
+        btnSkip.setOnClickListener {
+            findNavController().navigate(R.id.action_to_home_fragment)
+        }
+        tvContinueToApp.setOnClickListener {
+            findNavController().navigate(R.id.action_to_home_fragment)
         }
     }
 
