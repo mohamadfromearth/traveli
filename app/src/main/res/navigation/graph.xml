@@ -6,4 +6,16 @@
         android:id="@+id/onBoardingFragment"
         android:name="ui.onBoarding.OnBoardingFragment"
         android:label="OnBoardingFragment" />
+
+
+    <action
+       android:id="@+id/action_to_home_fragment"
+       app:destination="@id/homeFragment"
+
+        />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="ui.home.HomeFragment"
+        android:label="HomeFragment" />
+
 </navigation>

@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import coil.load
 import coil.size.Scale
 import com.xodus.traveli.R
@@ -18,15 +19,11 @@ import util.extension.log
 import util.getColor
 
 class OnBoardingPagerFragment() : Fragment() {
-
-
     private var _binding: FragmentOnBoardingSlidesBinding? = null
     private val binding: FragmentOnBoardingSlidesBinding
         get() = _binding!!
     private val app = ApplicationClass.getInstance()
     private var position: Int? = -1
-
-
     private var cityImage = 0
     private var travelyLogo = 0
     private var title1Text = ""
@@ -39,13 +36,11 @@ class OnBoardingPagerFragment() : Fragment() {
         position = arguments?.getInt(KEY_ON_BOARDING_POSITION)
     }
 
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_on_boarding_slides, container, false)
 
         return binding.root
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -72,7 +67,6 @@ class OnBoardingPagerFragment() : Fragment() {
                         view.setBackgroundColor(getColor(R.color.darkBlueBackground0))
                         textColor = getColor(R.color.darkBlueText0)
                         travelyLogo = R.drawable.union_white
-
                     }
                     2 -> {
                         cityImage = R.drawable.tajmahal
@@ -82,9 +76,7 @@ class OnBoardingPagerFragment() : Fragment() {
                         view.setBackgroundColor(getColor(R.color.lightPinkBackground0))
                         textColor = getColor(R.color.lightPinkText0)
                         travelyLogo = R.drawable.union
-
                     }
-
                     3 -> {
                         cityImage = R.drawable.jungle
                         title1Text = app.m.forthSlideTitle1
@@ -129,17 +121,14 @@ class OnBoardingPagerFragment() : Fragment() {
 
             tvContinueToApp.isVisible = position == 3
 
-
-
+            btnSkip.setOnClickListener {
+                findNavController().navigate(R.id.action_to_home_fragment)
+            }
         }
-
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
-
 }

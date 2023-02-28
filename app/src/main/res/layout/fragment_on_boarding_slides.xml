@@ -24,7 +24,7 @@
             android:id="@+id/iv_travely_logo"
             android:layout_width="119dp"
             android:layout_height="75dp"
-            android:layout_marginStart="@dimen/paddingLarge"
+            android:layout_marginStart="@dimen/paddingLargeXX"
             android:layout_marginTop="@dimen/paddingLargeXXXXX"
             android:src="@drawable/union_white"
             app:layout_constraintStart_toStartOf="parent"
