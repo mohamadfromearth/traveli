@@ -1,4 +1,4 @@
-package ui.home
+package ui.travels
 
 import dagger.hilt.android.lifecycle.HiltViewModel
 import main.ApplicationClass
@@ -6,5 +6,5 @@ import ui.base.BaseViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(app: ApplicationClass) : BaseViewModel<HomeEvent, HomeAction>(app) {
+class TravelsViewModel @Inject constructor(app: ApplicationClass) : BaseViewModel<TravelsEvent, TravelsAction>(app) {
 }

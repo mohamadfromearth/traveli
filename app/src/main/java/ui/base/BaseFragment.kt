@@ -18,9 +18,9 @@ open class BaseFragment<VB : ViewDataBinding, E : BaseEvent, A : BaseAction, VM 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = DataBindingUtil.inflate<VB>(inflater, layoutId, container, false).apply {
             lifecycleOwner = viewLifecycleOwner
-        //    setVariable(BR.vm, viewModel)
+            setVariable(BR.vm, viewModel)
             setVariable(BR.app, viewModel.app)
-          //  setVariable(BR.action,viewModel.action)
+            //setVariable(BR.action,viewModel.action)
         }
         baseActivity = requireActivity() as BaseActivity
         baseActivity.setLoading(false)

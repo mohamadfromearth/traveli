@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="ui.travels.TravelsViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorBackground0">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title"
+            fonti="@{vm.app.m.fontBold}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeX"
+            android:layout_marginTop="@dimen/paddingLargeXXXXX"
+            android:text="@{vm.app.m.travels}"
+            android:textSize="@dimen/textLargeXXX"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Travels"
+
+            />
+
+        <View
+            android:id="@+id/separator"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginHorizontal="@dimen/paddingLarge"
+            android:layout_marginTop="@dimen/paddingSmall"
+            android:background="?attr/colorText0"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tools:background="@color/md_black_1000" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separator">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_un_known"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="@dimen/paddingMedium"
+                    android:background="@color/md_blue_50"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/separator2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginHorizontal="@dimen/paddingLarge"
+                    android:layout_marginTop="@dimen/paddingMedium"
+                    android:background="?attr/colorText0"
+                    app:layout_constraintTop_toBottomOf="@id/rv_un_known"
+                    tools:background="@color/md_black_1000" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_most_popular_title"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/paddingLargeXX"
+                    android:layout_marginTop="@dimen/paddingMedium"
+                    android:text="@{vm.app.m.mostPopular}"
+                    android:textSize="@dimen/textLargeX"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/separator2"
+                    tools:text="Most popular" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_most_popular_description"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/paddingLargeXX"
+                    android:text="@{vm.app.m.whatOthersHaveEnjoyed}"
+                    android:textSize="@dimen/textLarge"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_most_popular_title"
+                    tools:text="What others have enjoyed" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_see_all"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{vm.app.m.seeAll}"
+                    android:textColor="@color/md_light_blue_A150"
+                    android:textSize="@dimen/textLarge"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_most_popular_description"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_see_all"
+                    app:layout_constraintTop_toTopOf="@id/tv_most_popular_title"
+                    tools:text="See all" />
+
+                <ImageView
+                    android:id="@+id/iv_see_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/paddingLargeXX"
+                    android:src="@drawable/ic_arrow_right"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_see_all"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_see_all" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_most_popular"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="@dimen/paddingLarge"
+                    android:background="@color/md_blue_50"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_most_popular_description" />
+
+                <View
+                    android:id="@+id/separator3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginHorizontal="@dimen/paddingLarge"
+                    android:layout_marginTop="@dimen/paddingMedium"
+                    android:background="?attr/colorText0"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_most_popular"
+                    tools:background="@color/md_black_1000" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_top_guides_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/paddingLargeXX"
+                    android:text="@{vm.app.m.topGuides}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separator3"
+                    android:layout_marginTop="@dimen/paddingMedium"
+                    tools:text="Top Guides"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:textSize="@dimen/textLargeX"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
+

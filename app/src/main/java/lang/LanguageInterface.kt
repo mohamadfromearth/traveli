@@ -6,7 +6,6 @@ interface LanguageInterface {
     val fontLight: Typeface?
     val fontMedium: Typeface?
     val fontBold: Typeface?
-
     val locale: String
     val appName: String
     val openUrl: String
@@ -29,8 +28,6 @@ interface LanguageInterface {
     val addPreview: String
     val yes: String
     val no: String
-
-
     val search: String
     val trending: String
     val countries: String
@@ -109,10 +106,9 @@ interface LanguageInterface {
     val owned: String
     val marked: String
 
-
     // Common
     val skip: String
-
+    val seeAll: String
 
     // OnBoarding
     val firstSlideTitle1: String
@@ -127,6 +123,11 @@ interface LanguageInterface {
     val forthSlideTitle1: String
     val forthSlideTitle2: String
     val continueToApp: String
+
+    //Travels screen
+    val mostPopular: String
+    val whatOthersHaveEnjoyed: String
+    val topGuides: String
 
     fun priceCannotBeLowerThanX(value: String) = "$priceCannotBeLowerThanX1 $value $priceCannotBeLowerThanX2"
     fun priceCannotBeHigherThanX(value: String) = "$priceCannotBeHigherThanX1 $value $priceCannotBeHigherThanX2"

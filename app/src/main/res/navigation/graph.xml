@@ -15,7 +15,7 @@
         />
     <fragment
         android:id="@+id/homeFragment"
-        android:name="ui.home.HomeFragment"
+        android:name="ui.travels.TravelsFragment"
         android:label="HomeFragment" />
 
 </navigation>

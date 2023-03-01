@@ -31,7 +31,6 @@ class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
     override val addPreview: String = "Add preview"
     override val yes: String = "Yes"
     override val no: String = "No"
-
     override val search: String = "Search"
     override val trending: String = "Trending"
     override val countries: String = "Countries"
@@ -44,7 +43,6 @@ class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
     override val tags: String = "Tags"
     override val owned: String = "Owned"
     override val marked: String = "Marked"
-
 
     //Profile
     override val confirm: String = "Confirm"
@@ -107,7 +105,7 @@ class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
 
     // common
     override val skip: String = "Skip"
-
+    override val seeAll: String = "See All"
 
     // OnBoarding
     override val firstSlideTitle1: String = "Expectacular"
@@ -123,5 +121,8 @@ class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
     override val forthSlideTitle2: String = "Started"
     override val continueToApp: String = "Continue to app >"
 
-
+    // Travels screen
+    override val mostPopular: String = "Most popular"
+    override val whatOthersHaveEnjoyed: String = "What others have enjoyed"
+    override val topGuides: String = "Top Guides"
 }
