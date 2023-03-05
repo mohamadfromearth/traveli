@@ -10,3 +10,7 @@ suspend fun PrefManager.authorize(ifAuthorized: suspend () -> (Unit), ifNotAutho
         ifAuthorized()
     }
 }
+
+ fun lerp(a: Float, b: Float, t: Float): Float {
+    return a + (b - a) * t
+}
