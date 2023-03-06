@@ -15,6 +15,7 @@
         <item name="colorButtonBackground">@color/darkBlueButtonBackground</item>
         <item name="colorButtonText">@color/darkBlueButtonText</item>
         <item name="colorRipple">@color/darkBlueRipple</item>
+        <item name="colorSeparator">@color/darkBlueSeparator</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">false</item>
@@ -23,7 +24,6 @@
         <!--        <item name="android:textAppearanceLargePopupMenu">@style/myPopupMenuTextAppearanceLarge</item>-->
 
     </style>
-
 
     <style name="AppTheme.Light.Pink" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
@@ -40,6 +40,7 @@
         <item name="colorButtonBackground">@color/lightPinkButtonBackground</item>
         <item name="colorButtonText">@color/lightPinkButtonText</item>
         <item name="colorRipple">@color/lightPinkRipple</item>
+        <item name="colorSeparator">@color/lightBlueSeparator</item>
 
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -75,7 +76,6 @@
     <style name="BottomNavigationViewFontedEn">
         <item name="fontFamily">@font/font_en_medium</item>
 
-
     </style>
 
     <style name="ToolbarButton" parent="Widget.MaterialComponents.Button.TextButton">
@@ -89,8 +89,6 @@
         <item name="iconTint">@color/md_white_1000</item>
         <item name="rippleColor">?attr/colorRipple</item>
     </style>
-
-
 
     <style name="GeneralButton" parent="Widget.MaterialComponents.Button">
         <item name="android:textColor">?attr/colorButtonText</item>

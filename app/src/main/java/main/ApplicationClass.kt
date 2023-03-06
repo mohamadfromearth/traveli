@@ -41,7 +41,6 @@ class ApplicationClass : Application() {
     external fun getBaseApi(): String
 
     external fun getBaseUrl(): String
-
     //external fun getBaseUrl():String
     //    private fun setupPicasso() {
     //        val client = OkHttpClient.Builder()

@@ -1,5 +1,6 @@
 package ui.travels
 
+import adapter.MostPopularAdapter
 import adapter.UnKnownAdapter
 import android.os.Bundle
 import android.view.View
@@ -19,6 +20,7 @@ import java.io.File.separator
 @AndroidEntryPoint
 class TravelsFragment : BaseFragment<FragmentTravelsBinding, TravelsEvent, TravelsAction, TravelsViewModel>(R.layout.fragment_travels) {
     private lateinit var unKnownAdapter: UnKnownAdapter
+    private lateinit var mostPopularAdapter: MostPopularAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +29,9 @@ class TravelsFragment : BaseFragment<FragmentTravelsBinding, TravelsEvent, Trave
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.root.post { animateTitle() }
+        binding.root.post {
+            animateTitle()
+        }
         setUpRecyclerViews()
     }
 
@@ -53,6 +57,8 @@ class TravelsFragment : BaseFragment<FragmentTravelsBinding, TravelsEvent, Trave
         binding.apply {
             unKnownAdapter = UnKnownAdapter(baseActivity)
             rvUnKnown.adapter = unKnownAdapter
+            mostPopularAdapter = MostPopularAdapter(baseActivity)
+            rvMostPopular.adapter = mostPopularAdapter
         }
     }
 }

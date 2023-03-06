@@ -14,6 +14,7 @@
     <color name="darkBlueButtonText">@color/darkBlueText0</color>
     <!--    <color name="darkBlueRipple">@color/darkBlueColorPrimary</color>-->
     <color name="darkBlueRipple">@color/md_white_1000</color>
+    <color name="darkBlueSeparator">#B9B9BB</color>
 
     <!--  Light : Pink  -->
     <color name="lightPinkColorPrimary">#F48FB1</color>
@@ -29,6 +30,7 @@
     <color name="lightPinkButtonText">@color/lightPinkBackground1</color>
     <!--    <color name="lightPinkRipple">@color/lightPinkColorPrimary</color>-->
     <color name="lightPinkRipple">@color/md_white_1000</color>
+    <color name="lightBlueSeparator">#656565</color>
     <!-- google's material design colours from
     http://www.google.com/design/spec/style/color.html#color-ui-color-palette -->
 
@@ -147,8 +149,6 @@
     <color name="md_light_blue_A200">#40C4FF</color>
     <color name="md_light_blue_A400">#00B0FF</color>
     <color name="md_light_blue_A700">#0091EA</color>
-
-
 
     <!-- cyan -->
     <color name="md_cyan_50">#E0F7FA</color>
@@ -332,10 +332,5 @@
     <color name="md_blue_grey_700">#455A64</color>
     <color name="md_blue_grey_800">#37474F</color>
     <color name="md_blue_grey_900">#263238</color>
-
-
-
-
-
 
 </resources>
