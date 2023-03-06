@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="app"
+            type="main.ApplicationClass" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="@dimen/paddingMedium"
+        android:layout_marginTop="@dimen/paddingLarge"
+        >
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_un_known_title1"
+            fonti="@{app.m.fontMedium}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The outstanding island of Canary"
+            android:textSize="@dimen/textLargeX"
+            android:layout_marginStart="@dimen/paddingSmall"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fonti="@{app.m.fontMedium}"
+            android:text="See what sarrah has to tell you about her trip"
+            android:textSize="@dimen/textLargeX"
+            android:layout_marginTop="@dimen/paddingSmall"
+            android:layout_marginStart="@dimen/paddingSmall"
+            />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_unknown"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:layout_marginTop="@dimen/paddingSmall"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Small"
+            />
+
+    </LinearLayout>
+
+</layout>
+
+
