@@ -6,9 +6,9 @@ import com.xodus.traveli.R
 import main.ApplicationClass
 
 class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
-    override val fontLight: Typeface? get() = ResourcesCompat.getFont(app, R.font.font_en_light)
-    override val fontMedium: Typeface? get() = ResourcesCompat.getFont(app, R.font.font_en_medium)
-    override val fontBold: Typeface? get() = ResourcesCompat.getFont(app, R.font.font_en_medium)
+    override val fontLight: Typeface? get() = ResourcesCompat.getFont(app, R.font.sf_pro_text_light)
+    override val fontMedium: Typeface? get() = ResourcesCompat.getFont(app, R.font.sf_pro_text_medium)
+    override val fontBold: Typeface? get() = ResourcesCompat.getFont(app, R.font.sf_pro_text_bold)
     override val locale = "EN"
     override val appName = "Template Five"
     override val openUrl = "Open URL"

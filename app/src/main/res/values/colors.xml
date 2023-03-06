@@ -9,7 +9,7 @@
     <color name="darkBlueBackground2">#686868</color>
     <color name="darkBlueText0">#FFFFFF</color>
     <color name="darkBlueText1">#DBDBDB</color>
-    <color name="darkBlueText2">#B7B7B7</color>
+    <color name="darkBlueText2">#717171</color>
     <color name="darkBlueButtonBackground">@color/darkBlueColorPrimary</color>
     <color name="darkBlueButtonText">@color/darkBlueText0</color>
     <!--    <color name="darkBlueRipple">@color/darkBlueColorPrimary</color>-->

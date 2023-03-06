@@ -41,7 +41,6 @@
             fonti="@{app.m.fontMedium}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/paddingSmall"
             android:text="Mohamad"
             android:layout_marginStart="@dimen/paddingSmall"
             android:textColor="?attr/colorText2"

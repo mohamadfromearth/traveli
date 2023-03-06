@@ -23,7 +23,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/paddingSmall"
             android:text="The outstanding island of Canary"
-            android:textSize="@dimen/textLargeX" />
+            android:textSize="@dimen/textLarge"
+            android:textColor="?attr/colorText0"
+            />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_title_2"
@@ -31,9 +33,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/paddingSmall"
-            android:layout_marginTop="@dimen/paddingSmall"
             android:text="See what sarrah has to tell you about her trip"
-            android:textSize="@dimen/textLargeX" />
+            android:textSize="@dimen/textLarge"
+            android:textColor="?attr/colorText2"
+            />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_unknown"

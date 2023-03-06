@@ -1,6 +1,7 @@
 package ui.travels
 
 import adapter.MostPopularAdapter
+import adapter.TopGuidesAdapter
 import adapter.UnKnownAdapter
 import android.os.Bundle
 import android.view.View
@@ -8,6 +9,9 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.marginStart
 import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView.HORIZONTAL
+import androidx.recyclerview.widget.RecyclerView.Orientation
 import com.xodus.traveli.R
 import com.xodus.traveli.databinding.FragmentTravelsBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,6 +25,7 @@ import java.io.File.separator
 class TravelsFragment : BaseFragment<FragmentTravelsBinding, TravelsEvent, TravelsAction, TravelsViewModel>(R.layout.fragment_travels) {
     private lateinit var unKnownAdapter: UnKnownAdapter
     private lateinit var mostPopularAdapter: MostPopularAdapter
+    private lateinit var topGuidesAdapter: TopGuidesAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,6 +64,9 @@ class TravelsFragment : BaseFragment<FragmentTravelsBinding, TravelsEvent, Trave
             rvUnKnown.adapter = unKnownAdapter
             mostPopularAdapter = MostPopularAdapter(baseActivity)
             rvMostPopular.adapter = mostPopularAdapter
+            topGuidesAdapter = TopGuidesAdapter(baseActivity)
+            rvTopGuides.layoutManager = GridLayoutManager(requireContext(), 2).apply { orientation = HORIZONTAL }
+            rvTopGuides.adapter = topGuidesAdapter
         }
     }
 }

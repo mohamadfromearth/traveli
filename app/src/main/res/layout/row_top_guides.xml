@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="app"
+            type="main.ApplicationClass" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/paddingLarge"
+        android:layout_marginTop="@dimen/paddingLarge"
+        >
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_top_guides"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Small"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Linus Torvalds"
+            android:textSize="@dimen/textLarge"
+            android:textColor="?attr/colorText0"
+            fonti="@{app.m.fontMedium}"
+            android:layout_marginStart="@dimen/paddingMedium"
+            app:layout_constraintBottom_toTopOf="@id/tv_travels_count"
+            app:layout_constraintStart_toEndOf="@+id/iv_top_guides"
+            app:layout_constraintTop_toTopOf="@id/iv_top_guides" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_travels_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="28 travels"
+            android:textSize="@dimen/textMedium"
+            fonti="@{app.m.fontMedium}"
+            android:textColor="?attr/colorText2"
+            android:layout_marginStart="@dimen/paddingMedium"
+            app:layout_constraintBottom_toTopOf="@+id/rt_user"
+            app:layout_constraintStart_toEndOf="@+id/iv_top_guides"
+            app:layout_constraintTop_toBottomOf="@+id/tv_user" />
+
+        <RatingBar
+            android:id="@+id/rt_user"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_top_guides"
+            app:layout_constraintStart_toEndOf="@+id/iv_top_guides"
+            app:layout_constraintTop_toBottomOf="@+id/tv_travels_count"
+            android:layout_marginStart="@dimen/paddingMedium"
+
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
