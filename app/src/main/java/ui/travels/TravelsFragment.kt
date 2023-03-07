@@ -1,17 +1,14 @@
 package ui.travels
 
-import adapter.MostPopularAdapter
+import adapter.TravelAdapter
 import adapter.TopGuidesAdapter
 import adapter.UnKnownAdapter
 import android.os.Bundle
 import android.view.View
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.view.marginStart
 import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView.HORIZONTAL
-import androidx.recyclerview.widget.RecyclerView.Orientation
 import com.xodus.traveli.R
 import com.xodus.traveli.databinding.FragmentTravelsBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -19,13 +16,13 @@ import ui.base.BaseFragment
 import util.extension.convertDPtoPX
 import util.extension.convertPXtoDP
 import util.extension.lerp
-import java.io.File.separator
 
 @AndroidEntryPoint
 class TravelsFragment : BaseFragment<FragmentTravelsBinding, TravelsEvent, TravelsAction, TravelsViewModel>(R.layout.fragment_travels) {
     private lateinit var unKnownAdapter: UnKnownAdapter
-    private lateinit var mostPopularAdapter: MostPopularAdapter
+    private lateinit var mostPopularAdapter: TravelAdapter
     private lateinit var topGuidesAdapter: TopGuidesAdapter
+    private lateinit var newestTravelsAdapter: TravelAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +44,7 @@ class TravelsFragment : BaseFragment<FragmentTravelsBinding, TravelsEvent, Trave
             val t = if (scrolInDp >= 34) 1f else scrolInDp / 34f
             binding.apply {
                 tvTitle.translationY = convertDPtoPX(lerp(0f, -30f, t))
-                separator.translationY = convertDPtoPX(lerp(0f, -30f, t))
+                separator.translationY = convertDPtoPX(lerp(0f, -31.5f, t))
                 //  Todo UnComment these
                 //separator.startX = lerp(convertDPtoPX(16f), 0f, t)
                 //separator.stopX = lerp(binding.root.width.toFloat() - convertDPtoPX(16f), binding.root.width.toFloat(), t)
@@ -62,11 +59,13 @@ class TravelsFragment : BaseFragment<FragmentTravelsBinding, TravelsEvent, Trave
         binding.apply {
             unKnownAdapter = UnKnownAdapter(baseActivity)
             rvUnKnown.adapter = unKnownAdapter
-            mostPopularAdapter = MostPopularAdapter(baseActivity)
+            mostPopularAdapter = TravelAdapter(baseActivity)
             rvMostPopular.adapter = mostPopularAdapter
             topGuidesAdapter = TopGuidesAdapter(baseActivity)
             rvTopGuides.layoutManager = GridLayoutManager(requireContext(), 2).apply { orientation = HORIZONTAL }
             rvTopGuides.adapter = topGuidesAdapter
+            newestTravelsAdapter = TravelAdapter(baseActivity)
+            rvNewestTravels.adapter = newestTravelsAdapter
         }
     }
 }

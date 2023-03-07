@@ -125,4 +125,6 @@ class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
     override val mostPopular: String = "Most popular"
     override val whatOthersHaveEnjoyed: String = "What others have enjoyed"
     override val topGuides: String = "Top Guides"
+    override val justArrived: String = "Just Arrived"
+    override val theLatestExperiencesOutThere: String = "The latest experiences out there"
 }

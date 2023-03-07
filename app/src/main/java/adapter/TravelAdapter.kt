@@ -11,7 +11,7 @@ import com.xodus.traveli.R
 import com.xodus.traveli.databinding.RowMostPopularBinding
 import ui.base.BaseActivity
 
-class MostPopularAdapter(private val activity: BaseActivity) : RecyclerView.Adapter<MostPopularAdapter.MostPopularHolder>() {
+class TravelAdapter(private val activity: BaseActivity) : RecyclerView.Adapter<TravelAdapter.MostPopularHolder>() {
     inner class MostPopularHolder(private val binding: RowMostPopularBinding) : ViewHolder(binding.root) {
         fun bind() {
             binding.apply {
