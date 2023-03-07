@@ -7,12 +7,18 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView.HORIZONTAL
 import com.xodus.traveli.R
 import com.xodus.traveli.databinding.FragmentTravelsBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
 import ui.base.BaseFragment
+import util.Constant.KEY_TRAVELS_LIST_TYPE
 import util.extension.convertDPtoPX
 import util.extension.convertPXtoDP
 import util.extension.lerp
@@ -23,6 +29,7 @@ class TravelsFragment : BaseFragment<FragmentTravelsBinding, TravelsEvent, Trave
     private lateinit var mostPopularAdapter: TravelAdapter
     private lateinit var topGuidesAdapter: TopGuidesAdapter
     private lateinit var newestTravelsAdapter: TravelAdapter
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,20 +38,37 @@ class TravelsFragment : BaseFragment<FragmentTravelsBinding, TravelsEvent, Trave
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.root.post {
-            animateTitle()
-        }
+        super.onViewCreated(view, savedInstanceState)
+        init()
+        animateTitle()
+        observeToEvents()
+    }
+
+    private fun init() {
+        navController = findNavController()
         setUpRecyclerViews()
+    }
+
+    private fun observeToEvents() {
+        lifecycleScope.launchWhenStarted {
+            viewModel.event.collectLatest {
+                when (it) {
+                    is TravelsEvent.NavToTravelsList -> navController.navigate(R.id.action_homeFragment_to_travelsListFragment,
+                        Bundle().apply { putSerializable(KEY_TRAVELS_LIST_TYPE, it.travelsListType) }
+                    )
+                }
+            }
+        }
     }
 
     private fun animateTitle() {
         binding.scrollView.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener() { v, scrolx, scrollY, oldScrolx, oldScroly ->
             val layoutWidthDivededBy2 = convertPXtoDP((binding.root.width / 2f) - binding.tv16SpTravels.width / 2)
             val scrolInDp = convertPXtoDP(scrollY.toFloat())
-            val t = if (scrolInDp >= 34) 1f else scrolInDp / 34f
+            val t = if (scrolInDp >= 50) 1f else scrolInDp / 50f
             binding.apply {
-                tvTitle.translationY = convertDPtoPX(lerp(0f, -30f, t))
-                separator.translationY = convertDPtoPX(lerp(0f, -31.5f, t))
+                tvTitle.translationY = convertDPtoPX(lerp(0f, -26f, t))
+                separator.translationY = convertDPtoPX(lerp(0f, -27.5f, t))
                 //  Todo UnComment these
                 //separator.startX = lerp(convertDPtoPX(16f), 0f, t)
                 //separator.stopX = lerp(binding.root.width.toFloat() - convertDPtoPX(16f), binding.root.width.toFloat(), t)

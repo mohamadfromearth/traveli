@@ -37,7 +37,7 @@
             android:id="@+id/tv_title"
             fonti="@{vm.app.m.fontBold}"
             android:layout_width="118dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/paddingLargeX"
             android:layout_marginTop="@dimen/paddingLargeXXXXX"
             android:gravity="bottom"
@@ -62,9 +62,10 @@
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:translationY="53dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="37dp"
+            >
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -74,7 +75,7 @@
                     android:id="@+id/rv_un_known"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="68dp"
                     android:clipToPadding="false"
                     android:orientation="horizontal"
                     android:paddingHorizontal="12dp"
@@ -130,7 +131,9 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/iv_see_all"
                     app:layout_constraintTop_toTopOf="@id/tv_most_popular_title"
-                    tools:text="See all" />
+                    tools:text="See all"
+                    android:onClick="@{()-> vm.onMostPopularSeeAllClick()}"
+                    />
 
                 <ImageView
                     android:id="@+id/iv_see_all"
@@ -141,7 +144,9 @@
                     app:layout_constraintBottom_toBottomOf="@id/tv_most_popular_see_all"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tv_most_popular_see_all"
-                    app:tint="@color/md_light_blue_A150" />
+                    app:tint="@color/md_light_blue_A150"
+                    android:onClick="@{() -> vm.onMostPopularSeeAllClick()}"
+                    />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_most_popular"
@@ -260,7 +265,9 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/iv_see_all"
                     app:layout_constraintTop_toTopOf="@id/tv_newest_travels_title"
-                    tools:text="See all" />
+                    tools:text="See all"
+                    android:onClick="@{() -> vm.onJustArrivedSeeAllClick()}"
+                    />
 
                 <ImageView
                     android:id="@+id/iv_newest_travels_see_all"
@@ -271,7 +278,9 @@
                     app:layout_constraintBottom_toBottomOf="@id/tv_newest_travel_see_all"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tv_newest_travel_see_all"
-                    app:tint="@color/md_light_blue_A150" />
+                    app:tint="@color/md_light_blue_A150"
+                    android:onClick="@{() -> vm.onJustArrivedSeeAllClick()}"
+                    />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_newest_travels"

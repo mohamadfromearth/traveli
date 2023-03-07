@@ -28,7 +28,7 @@
     <style name="AppTheme.Light.Pink" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
         <item name="colorPrimary">@color/lightPinkColorPrimary</item>
-        <item name="colorPrimaryDark">@color/lightPinkColorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/lightPinkBackground0</item>
         <item name="colorAccent">@color/lightPinkColorAccent</item>
 
         <item name="colorText0">@color/lightPinkText0</item>

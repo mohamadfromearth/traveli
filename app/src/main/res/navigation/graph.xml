@@ -24,6 +24,10 @@
     <fragment
         android:id="@+id/travelsListFragment"
         android:name="ui.travelsList.TravelsListFragment"
-        android:label="TravelsListFragment" />
+        android:label="TravelsListFragment" >
+        <argument
+            android:name="travelsListType"
+            app:argType="ui.travelsList.TravelsListType" />
+    </fragment>
 
 </navigation>

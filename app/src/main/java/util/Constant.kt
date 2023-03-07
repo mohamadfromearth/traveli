@@ -32,11 +32,10 @@ object Constant {
     //======================KEYS=========================//
     const val KEY_CITY = "KEY_CITY"
     const val KEY_TAG = "KEY_TAG"
-
+    const val KEY_TRAVELS_LIST_TYPE = "KEY_TRAVELS_LIST_TYPE"
 
     //======================DATA BASE=========================//
     const val CON_TRAVELI_DATA_BASE_NAME = "TRAVELI_DATA_BASE"
-
 
     //AddTravel sheet item
     const val CON_ADD_TRAVEL_IMAGE = 0
@@ -44,11 +43,9 @@ object Constant {
     const val CON_ADD_TRAVEL_VIDEO = 3
     const val CON_ADD_TRAVEL_LINK = 1
 
-
     //OnBoarding
     const val CON_ON_BOARDING_SLIDES_COUNT = 4
     const val KEY_ON_BOARDING_POSITION = "ON_BOARDING_POS"
-
 
     enum class Languages(val value: String) {
         FA("FA"),
