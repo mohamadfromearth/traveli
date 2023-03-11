@@ -195,7 +195,9 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/iv_see_all"
                     app:layout_constraintTop_toTopOf="@id/tv_top_guides_title"
-                    tools:text="See all" />
+                    tools:text="See all"
+                    android:onClick="@{() -> vm.onTopGuidesSeeAllClick()}"
+                    />
 
                 <ImageView
                     android:id="@+id/iv_top_guides_see_all"
@@ -206,7 +208,9 @@
                     app:layout_constraintBottom_toBottomOf="@id/tv_top_guides_see_all"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tv_top_guides_see_all"
-                    app:tint="@color/md_light_blue_A150" />
+                    app:tint="@color/md_light_blue_A150"
+                    android:onClick="@{()->vm.onTopGuidesSeeAllClick()}"
+                    />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_top_guides"

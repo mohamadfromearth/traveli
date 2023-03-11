@@ -17,7 +17,7 @@
         >
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_top_guides"
+            android:id="@+id/iv_guides"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:scaleType="centerCrop"
@@ -36,8 +36,8 @@
             fonti="@{app.m.fontMedium}"
             android:layout_marginStart="@dimen/paddingMedium"
             app:layout_constraintBottom_toTopOf="@id/tv_travels_count"
-            app:layout_constraintStart_toEndOf="@+id/iv_top_guides"
-            app:layout_constraintTop_toTopOf="@id/iv_top_guides" />
+            app:layout_constraintStart_toEndOf="@+id/iv_guides"
+            app:layout_constraintTop_toTopOf="@id/iv_guides" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_travels_count"
@@ -49,7 +49,7 @@
             android:textColor="?attr/colorText2"
             android:layout_marginStart="@dimen/paddingMedium"
             app:layout_constraintBottom_toTopOf="@+id/rt_user"
-            app:layout_constraintStart_toEndOf="@+id/iv_top_guides"
+            app:layout_constraintStart_toEndOf="@+id/iv_guides"
             app:layout_constraintTop_toBottomOf="@+id/tv_user" />
 
         <RatingBar
@@ -57,8 +57,8 @@
             style="@style/Widget.AppCompat.RatingBar.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_top_guides"
-            app:layout_constraintStart_toEndOf="@+id/iv_top_guides"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_guides"
+            app:layout_constraintStart_toEndOf="@+id/iv_guides"
             app:layout_constraintTop_toBottomOf="@+id/tv_travels_count"
             android:layout_marginStart="@dimen/paddingMedium"
 

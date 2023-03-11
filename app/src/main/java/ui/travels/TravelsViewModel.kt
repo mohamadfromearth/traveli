@@ -21,4 +21,10 @@ class TravelsViewModel @Inject constructor(app: ApplicationClass) : BaseViewMode
             _event.send(TravelsEvent.NavToTravelsList(TravelsListType.NEWEST_TRAVELS))
         }
     }
+
+    override fun onTopGuidesSeeAllClick() {
+        viewModelScope.launch {
+            _event.send(TravelsEvent.NavToGuidesList(app.m.topGuides))
+        }
+    }
 }

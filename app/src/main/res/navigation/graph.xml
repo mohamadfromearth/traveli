@@ -20,6 +20,9 @@
         <action
             android:id="@+id/action_homeFragment_to_travelsListFragment"
             app:destination="@id/travelsListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_guidesListFragment"
+            app:destination="@id/guidesListFragment" />
     </fragment>
     <fragment
         android:id="@+id/travelsListFragment"
@@ -28,6 +31,14 @@
         <argument
             android:name="travelsListType"
             app:argType="ui.travelsList.TravelsListType" />
+    </fragment>
+    <fragment
+        android:id="@+id/guidesListFragment"
+        android:name="ui.guidesList.GuidesListFragment"
+        android:label="GuidesListFragment" >
+        <argument
+            android:name="title"
+            app:argType="string" />
     </fragment>
 
 </navigation>

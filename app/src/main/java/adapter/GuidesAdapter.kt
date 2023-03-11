@@ -8,15 +8,15 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import coil.load
 import coil.size.Scale
 import com.xodus.traveli.R
-import com.xodus.traveli.databinding.RowTopGuidesBinding
+import com.xodus.traveli.databinding.RowGuidesBinding
 import ui.base.BaseActivity
 
-class TopGuidesAdapter(private val activity: BaseActivity) : Adapter<TopGuidesAdapter.TopGuidesHolder>() {
-    inner class TopGuidesHolder(private val binding: RowTopGuidesBinding) : ViewHolder(binding.root) {
+class GuidesAdapter(private val activity: BaseActivity) : Adapter<GuidesAdapter.TopGuidesHolder>() {
+    inner class TopGuidesHolder(private val binding: RowGuidesBinding) : ViewHolder(binding.root) {
         fun bind() {
             binding.apply {
                 app = activity.app
-                ivTopGuides.load("https://i.pcmag.com/imagery/articles/040JHoVNgc1gh2e7sunj82k-1..v1569492349.png") {
+                ivGuides.load("https://i.pcmag.com/imagery/articles/040JHoVNgc1gh2e7sunj82k-1..v1569492349.png") {
                     scale(Scale.FIT)
                 }
             }
@@ -24,7 +24,7 @@ class TopGuidesAdapter(private val activity: BaseActivity) : Adapter<TopGuidesAd
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopGuidesHolder {
-        return TopGuidesHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.row_top_guides, parent, false))
+        return TopGuidesHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.row_guides, parent, false))
     }
 
     override fun getItemCount(): Int {

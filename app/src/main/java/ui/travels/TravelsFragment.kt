@@ -1,7 +1,7 @@
 package ui.travels
 
 import adapter.TravelAdapter
-import adapter.TopGuidesAdapter
+import adapter.GuidesAdapter
 import adapter.UnKnownAdapter
 import android.os.Bundle
 import android.view.View
@@ -9,7 +9,6 @@ import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView.HORIZONTAL
@@ -18,6 +17,7 @@ import com.xodus.traveli.databinding.FragmentTravelsBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import ui.base.BaseFragment
+import util.Constant.KEY_GUIDES_LIST_TITLE
 import util.Constant.KEY_TRAVELS_LIST_TYPE
 import util.extension.convertDPtoPX
 import util.extension.convertPXtoDP
@@ -27,7 +27,7 @@ import util.extension.lerp
 class TravelsFragment : BaseFragment<FragmentTravelsBinding, TravelsEvent, TravelsAction, TravelsViewModel>(R.layout.fragment_travels) {
     private lateinit var unKnownAdapter: UnKnownAdapter
     private lateinit var mostPopularAdapter: TravelAdapter
-    private lateinit var topGuidesAdapter: TopGuidesAdapter
+    private lateinit var topGuidesAdapter: GuidesAdapter
     private lateinit var newestTravelsAdapter: TravelAdapter
     private lateinit var navController: NavController
 
@@ -55,6 +55,9 @@ class TravelsFragment : BaseFragment<FragmentTravelsBinding, TravelsEvent, Trave
                 when (it) {
                     is TravelsEvent.NavToTravelsList -> navController.navigate(R.id.action_homeFragment_to_travelsListFragment,
                         Bundle().apply { putSerializable(KEY_TRAVELS_LIST_TYPE, it.travelsListType) }
+                    )
+                    is TravelsEvent.NavToGuidesList  -> navController.navigate(R.id.action_homeFragment_to_guidesListFragment,
+                        Bundle().apply { putString(KEY_GUIDES_LIST_TITLE, it.title) }
                     )
                 }
             }
@@ -85,7 +88,7 @@ class TravelsFragment : BaseFragment<FragmentTravelsBinding, TravelsEvent, Trave
             rvUnKnown.adapter = unKnownAdapter
             mostPopularAdapter = TravelAdapter(baseActivity)
             rvMostPopular.adapter = mostPopularAdapter
-            topGuidesAdapter = TopGuidesAdapter(baseActivity)
+            topGuidesAdapter = GuidesAdapter(baseActivity)
             rvTopGuides.layoutManager = GridLayoutManager(requireContext(), 2).apply { orientation = HORIZONTAL }
             rvTopGuides.adapter = topGuidesAdapter
             newestTravelsAdapter = TravelAdapter(baseActivity)

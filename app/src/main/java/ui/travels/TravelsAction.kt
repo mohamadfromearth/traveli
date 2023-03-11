@@ -6,4 +6,6 @@ interface TravelsAction : BaseAction {
     // click
     fun onMostPopularSeeAllClick()
     fun onJustArrivedSeeAllClick()
+
+    fun onTopGuidesSeeAllClick()
 }
