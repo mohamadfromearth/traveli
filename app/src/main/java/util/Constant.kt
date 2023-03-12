@@ -34,6 +34,7 @@ object Constant {
     const val KEY_TAG = "KEY_TAG"
     const val KEY_TRAVELS_LIST_TYPE = "KEY_TRAVELS_LIST_TYPE"
     const val KEY_GUIDES_LIST_TITLE = "KEY_GUIDES_LIST_TITLE"
+    const val KEY_GUIDE_PREVIOUS_PAGE_NAME = "GUIDE_PREVIOUS_PAGE_NAME"
 
     //======================DATA BASE=========================//
     const val CON_TRAVELI_DATA_BASE_NAME = "TRAVELI_DATA_BASE"

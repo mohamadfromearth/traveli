@@ -5,4 +5,5 @@ import ui.base.BaseAction
 interface GuidesListAction : BaseAction {
     fun onStart(title: String)
     fun onBackPress()
+    fun onItemClick(pos: Int)
 }

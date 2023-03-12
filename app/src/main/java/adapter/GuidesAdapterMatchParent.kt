@@ -11,13 +11,20 @@ import com.xodus.traveli.R
 import com.xodus.traveli.databinding.RowGuidesMatchParentBinding
 import ui.base.BaseActivity
 
-class GuidesAdapterMatchParent(private val activity: BaseActivity) : Adapter<GuidesAdapterMatchParent.GuidesHolder>() {
+class GuidesAdapterMatchParent(
+    private val activity: BaseActivity,
+    private val onItemClick: (pos: Int) -> Unit
+) : Adapter<GuidesAdapterMatchParent.GuidesHolder>() {
     inner class GuidesHolder(val binding: RowGuidesMatchParentBinding) : ViewHolder(binding.root) {
         fun bind() {
             binding.apply {
                 app = activity.app
                 ivGuides.load("https://i.pcmag.com/imagery/articles/040JHoVNgc1gh2e7sunj82k-1..v1569492349.png") {
                     scale(Scale.FIT)
+                }
+
+                root.setOnClickListener {
+                    onItemClick(bindingAdapterPosition)
                 }
             }
         }

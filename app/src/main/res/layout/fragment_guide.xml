@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="ui.guide.GuideViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title"
+            fonti="@{vm.app.m.fontBold}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/paddingMedium"
+            android:textColor="?attr/colorText0"
+            android:textSize="@dimen/textLargeX"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeX"
+            android:onClick="@{() -> vm.onBackPress()}"
+            android:src="@drawable/ic_arrow_left"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_title"
+            app:tint="@color/md_light_blue_A150"
+
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingSmall"
+            android:onClick="@{()->vm.onBackPress()}"
+            android:text="@{vm.previousPageName}"
+            android:textColor="@color/md_light_blue_A150"
+            android:textSize="@dimen/textLarge"
+            app:layout_constraintBottom_toBottomOf="@id/iv_back"
+            app:layout_constraintStart_toEndOf="@id/iv_back"
+            app:layout_constraintTop_toTopOf="@+id/iv_back" />
+
+        <View
+            android:id="@+id/separator"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="?attr/colorSeparator"
+            android:elevation="3dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separator">
+
+            <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/colorBackground0">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_guide"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_marginStart="@dimen/paddingLargeXX"
+                    android:layout_marginTop="@dimen/paddingLargeXX"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_travels_count"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="180"
+                    android:textColor="?attr/colorText0"
+                    android:textSize="@dimen/textLargeXX"
+                    app:layout_constraintBottom_toTopOf="@id/tv_travels"
+                    app:layout_constraintEnd_toStartOf="@id/tv_rate"
+                    app:layout_constraintStart_toEndOf="@id/iv_guide"
+                    app:layout_constraintTop_toTopOf="@id/iv_guide"
+                    tools:text="190" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_rate"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3/5"
+                    android:textColor="?attr/colorText0"
+                    android:textSize="@dimen/textLargeXX"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_reviews"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tv_travels_count"
+                    app:layout_constraintTop_toTopOf="@+id/iv_guide"
+                    tools:text="3/5"
+
+                    />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_travels"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{vm.app.m.travels}"
+                    android:textColor="?attr/colorText0"
+                    android:textSize="@dimen/textLarge"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_guide"
+                    app:layout_constraintEnd_toEndOf="@id/tv_travels_count"
+                    app:layout_constraintStart_toStartOf="@id/tv_travels_count"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_travels_count"
+                    tools:text="Travels" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_reviews"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="180 Reviews"
+                    android:textColor="?attr/colorText0"
+                    android:textSize="@dimen/textLarge"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_guide"
+                    app:layout_constraintEnd_toEndOf="@id/tv_rate"
+                    app:layout_constraintStart_toStartOf="@id/tv_rate"
+                    app:layout_constraintTop_toBottomOf="@id/tv_rate"
+                    tools:text="180 Reviews" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_guide_name"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/paddingLargeXX"
+                    android:text="Jack Williams"
+                    android:textColor="?attr/colorText0"
+                    android:textSize="@dimen/textLargeX"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_guide" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_bio"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/paddingLargeXX"
+                    android:layout_marginEnd="@dimen/paddingLargeXX"
+                    android:text="Traveller, lover, dad. join me for new adventure"
+                    android:textColor="?attr/colorText2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_guide_name" />
+
+                <ImageView
+                    android:id="@+id/iv_link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/paddingLargeXX"
+                    android:layout_marginTop="@dimen/paddingLarge"
+                    android:src="@drawable/ic_link"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_bio" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_link"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/paddingMedium"
+                    android:layout_marginTop="@dimen/paddingLarge"
+                    android:text="Instagram"
+                    android:textColor="@color/blue_link"
+                    app:layout_constraintStart_toEndOf="@id/iv_link"
+                    app:layout_constraintTop_toBottomOf="@id/tv_bio" />
+
+                <View
+                    android:id="@+id/separator2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginHorizontal="@dimen/paddingLargeXX"
+                    android:layout_marginTop="@dimen/paddingLargeXX"
+                    android:background="?attr/colorSeparator"
+                    app:layout_constraintTop_toBottomOf="@id/iv_link" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_travel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="@dimen/paddingLargeXX"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingTop="14dp"
+                    app:layout_constraintTop_toBottomOf="@+id/separator2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
+

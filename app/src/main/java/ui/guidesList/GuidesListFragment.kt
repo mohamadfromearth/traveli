@@ -1,6 +1,5 @@
 package ui.guidesList
 
-import adapter.GuidesAdapter
 import adapter.GuidesAdapterMatchParent
 import android.os.Bundle
 import android.view.View
@@ -11,10 +10,9 @@ import androidx.navigation.fragment.findNavController
 import com.xodus.traveli.R
 import com.xodus.traveli.databinding.FragmentGuidesListBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 import ui.base.BaseFragment
 import util.Constant.KEY_GUIDES_LIST_TITLE
+import util.Constant.KEY_GUIDE_PREVIOUS_PAGE_NAME
 
 @AndroidEntryPoint
 class GuidesListFragment : BaseFragment<FragmentGuidesListBinding, GuidesListEvent, GuidesListAction, GuidesListViewModel>(R.layout.fragment_guides_list) {
@@ -43,14 +41,21 @@ class GuidesListFragment : BaseFragment<FragmentGuidesListBinding, GuidesListEve
         lifecycleScope.launchWhenStarted {
             viewModel.event.collect {
                 when (it) {
-                    GuidesListEvent.NavBack -> navController.popBackStack()
+                    GuidesListEvent.NavBack       -> navController.popBackStack()
+                    is GuidesListEvent.NavToGuide -> {
+                        navController.navigate(R.id.action_guidesListFragment_to_guideFragment, Bundle().apply {
+                            putString(KEY_GUIDE_PREVIOUS_PAGE_NAME, it.pageName)
+                        })
+                    }
                 }
             }
         }
     }
 
     private fun setUpRecyclerView() {
-        guidesAdapter = GuidesAdapterMatchParent(baseActivity)
+        guidesAdapter = GuidesAdapterMatchParent(baseActivity) { position ->
+            viewModel.action.onItemClick(position)
+        }
         binding.rvGuides.adapter = guidesAdapter
     }
 }

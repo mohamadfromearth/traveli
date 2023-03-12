@@ -22,4 +22,10 @@ class GuidesListViewModel @Inject constructor(app: ApplicationClass) : BaseViewM
             _event.send(GuidesListEvent.NavBack)
         }
     }
+
+    override fun onItemClick(pos: Int) {
+        viewModelScope.launch {
+            _event.send(GuidesListEvent.NavToGuide(-1, app.m.guides))
+        }
+    }
 }

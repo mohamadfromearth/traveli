@@ -129,7 +129,10 @@ interface LanguageInterface {
     val whatOthersHaveEnjoyed: String
     val topGuides: String
     val justArrived: String
-    val theLatestExperiencesOutThere:String
+    val theLatestExperiencesOutThere: String
+
+    //  profile
+    val guides: String
 
     fun priceCannotBeLowerThanX(value: String) = "$priceCannotBeLowerThanX1 $value $priceCannotBeLowerThanX2"
     fun priceCannotBeHigherThanX(value: String) = "$priceCannotBeHigherThanX1 $value $priceCannotBeHigherThanX2"

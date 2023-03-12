@@ -39,6 +39,17 @@
         <argument
             android:name="title"
             app:argType="string" />
+        <action
+            android:id="@+id/action_guidesListFragment_to_guideFragment"
+            app:destination="@id/guideFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/guideFragment"
+        android:name="ui.guide.GuideFragment"
+        android:label="GuideFragment" >
+        <argument
+            android:name="previousScreenName"
+            app:argType="string" />
     </fragment>
 
 </navigation>
