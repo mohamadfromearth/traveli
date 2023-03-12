@@ -38,7 +38,7 @@
             fonti="@{vm.app.m.fontBold}"
             android:layout_width="118dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/paddingLargeX"
+            android:layout_marginStart="@dimen/paddingLargeXX"
             android:layout_marginTop="@dimen/paddingLargeXXXXX"
             android:gravity="bottom"
             android:text="@{vm.app.m.travels}"
