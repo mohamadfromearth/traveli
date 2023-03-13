@@ -11,55 +11,220 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="?attr/colorBackground0"
-        xmlns:tools="http://schemas.android.com/tools"
-        >
+        android:background="?attr/colorBackground0">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_16_sp_travels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{vm.app.m.destinations}"
+            android:textSize="@dimen/textLargeX"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_title"
+            fonti="@{vm.app.m.fontBold}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="@dimen/paddingLargeXX"
-            tools:text="Destinations"
-            android:textSize="@dimen/textLargeXXX"
             android:layout_marginTop="@dimen/paddingLargeXXXXX"
-            />
+            android:text="@{vm.app.m.destinations}"
+            android:textColor="?attr/colorText0"
+            android:textSize="@dimen/textLargeXXX"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Destinations" />
 
         <View
             android:id="@+id/separator"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:layout_marginTop="-3dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_title"
             android:background="?attr/colorSeparator"
             android:elevation="5dp"
-            />
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="37dp"
-            >
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_destination"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/paddingLargeXX"
+                    android:paddingTop="80dp"
+                    android:paddingEnd="12dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toTopOf="parent" />
 
+                <View
+                    android:id="@+id/separator2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginHorizontal="@dimen/paddingLarge"
+                    android:layout_marginTop="@dimen/paddingLarge"
+                    android:background="?attr/colorSeparator"
+                    app:layout_constraintTop_toBottomOf="@id/rv_destination" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_adventurous"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/paddingLargeXX"
+                    android:layout_marginTop="@dimen/paddingLarge"
+                    android:text="Adventurous"
+                    android:textColor="?attr/colorText0"
+                    android:textSize="@dimen/textLargeXX"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/separator2"
+                    tools:text="Adventurous" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_adventurous_description"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/paddingLargeXX"
+                    android:text="Experience the unknown"
+                    android:textColor="?attr/colorText2"
+                    android:textSize="@dimen/textLarge"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_adventurous"
+                    tools:text="What others have enjoyed" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_adventurous_see_all"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{vm.app.m.seeAll}"
+                    android:textColor="@color/md_light_blue_A150"
+                    android:textSize="@dimen/textLarge"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_adventurous_description"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_see_all"
+                    app:layout_constraintTop_toTopOf="@id/tv_adventurous"
+                    tools:text="See all" />
+
+                <ImageView
+                    android:id="@+id/iv_see_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/paddingLargeXX"
+                    android:src="@drawable/ic_arrow_right"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_adventurous_see_all"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_adventurous_see_all"
+                    app:tint="@color/md_light_blue_A150" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_destination_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/paddingLarge"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="12dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/tv_adventurous_description" />
+
+                <View
+                    android:id="@+id/separator3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginHorizontal="@dimen/paddingLarge"
+                    android:layout_marginTop="@dimen/paddingLarge"
+                    android:background="?attr/colorSeparator"
+                    app:layout_constraintTop_toBottomOf="@id/rv_destination_2" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_most_visited"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/paddingLargeXX"
+                    android:layout_marginTop="@dimen/paddingLarge"
+                    android:text="Most visited"
+                    android:textColor="?attr/colorText0"
+                    android:textSize="@dimen/textLargeXX"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/separator3" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_most_visited_description"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/paddingLargeXX"
+                    android:text="Experience the unknown"
+                    android:textSize="@dimen/textLarge"
+                    android:textColor="?attr/colorText2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_most_visited"
+                    tools:text="What others have enjoyed" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_most_visited_see_all"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{vm.app.m.seeAll}"
+                    android:textColor="@color/md_light_blue_A150"
+                    android:textSize="@dimen/textLarge"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_most_visited_description"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_see_all"
+                    app:layout_constraintTop_toTopOf="@id/tv_most_visited"
+                    tools:text="See all"
+
+                    />
+
+                <ImageView
+                    android:id="@+id/iv_most_visited_see_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/paddingLargeXX"
+                    android:src="@drawable/ic_arrow_right"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_most_visited_see_all"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_most_visited_see_all"
+                    app:tint="@color/md_light_blue_A150" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_destination_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/paddingLarge"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/paddingLargeXX"
+                    android:paddingEnd="12dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_most_visited_description" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.core.widget.NestedScrollView>
-
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

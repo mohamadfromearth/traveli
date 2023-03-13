@@ -51,5 +51,9 @@
             android:name="previousScreenName"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/destinationsFragment"
+        android:name="ui.destination.DestinationsFragment"
+        android:label="DestinationsFragment" />
 
 </navigation>

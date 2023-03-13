@@ -39,7 +39,7 @@
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_unknown"
             android:layout_width="match_parent"
-            android:layout_height="230dp"
+            android:layout_height="210dp"
             android:layout_marginTop="@dimen/paddingSmall"
             android:scaleType="centerCrop"
             app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Small" />

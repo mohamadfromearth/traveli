@@ -6,7 +6,7 @@
         android:title="" />
 
     <item
-        android:id="@+id/favoriteFragnebt"
+        android:id="@+id/destinationsFragment"
         android:icon="@drawable/ic_location"
         android:title="" />
 
@@ -14,7 +14,6 @@
         android:id="@+id/profileTabFragment"
         android:icon="@drawable/ic_search"
         android:title="" />
-
 
     <item
         android:id="@+id/profileTabFragments"

@@ -16,7 +16,7 @@ class TravelAdapter(private val activity: BaseActivity) : RecyclerView.Adapter<T
         fun bind() {
             binding.apply {
                 app = activity.app
-                ivMostPopular.load("https://tourscanner.com/blog/wp-content/uploads/2020/12/Burj-Khalifa-Dubai.jpg") {
+                ivMostPopular.load("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Towers_in_Tehran_City_at_night.jpg/800px-Towers_in_Tehran_City_at_night.jpg?20150430213944") {
                     scale(Scale.FILL)
                 }
             }

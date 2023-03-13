@@ -11,42 +11,41 @@
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/paddingMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/paddingMedium"
+        android:background="?attr/colorBackground0"
         android:orientation="vertical">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_most_popular"
-            android:layout_width="match_parent"
-            android:layout_height="135dp"
+            android:id="@+id/iv_destination"
+            android:layout_width="168dp"
+            android:layout_height="168dp"
+            android:background="?attr/colorBackground2"
             android:scaleType="centerCrop"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Small" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_title"
+            android:id="@+id/tv_destination_name"
             fonti="@{app.m.fontMedium}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/paddingSmall"
-            android:text="To the Tehran"
+            android:text="Tokyo"
             android:textColor="?attr/colorText0"
-            android:textSize="@dimen/textLarge" />
+            android:textSize="@dimen/textLargeX" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_description"
+            android:id="@+id/tv_travels_count"
             fonti="@{app.m.fontMedium}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mohamad"
+            android:text="18 travels"
             android:textColor="?attr/colorText2"
-            android:textSize="@dimen/textMedium"
-
-            />
+            android:layout_marginTop="-8dp"
+            android:textSize="@dimen/textLarge" />
 
     </LinearLayout>
 
 </layout>
+
 
