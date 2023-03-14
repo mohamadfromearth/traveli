@@ -8,12 +8,14 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.xodus.traveli.R
 import com.xodus.traveli.databinding.FragmentDestinationBinding
 import dagger.hilt.android.AndroidEntryPoint
 import ui.base.BaseFragment
+import util.Constant.KEY_PAGE_NAME
 import util.extension.convertDPtoPX
 import util.extension.convertPXtoDP
 import util.extension.convertSPtoPX
@@ -33,8 +35,20 @@ class DestinationFragment : BaseFragment<FragmentDestinationBinding, Destination
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.action.onStart(requireArguments().getString(KEY_PAGE_NAME, ""))
         setUpRecyclerViews()
         scrollAnimation()
+        observeToEvents()
+    }
+
+    private fun observeToEvents() {
+        lifecycleScope.launchWhenStarted {
+            viewModel.event.collect {
+                when (it) {
+                    DestinationEvent.NavBack -> findNavController().popBackStack()
+                }
+            }
+        }
     }
 
     private fun scrollAnimation() {
@@ -57,6 +71,7 @@ class DestinationFragment : BaseFragment<FragmentDestinationBinding, Destination
                 tvTitle.translationY = convertDPtoPX(lerp(0f, -58f, titleT))
                 tvTitle.textSize = lerp(32f, 16f, titleT)
                 tvDescription.alpha = lerp(1f, 0f, t)
+                tvLink.alpha = lerp(1f, 0f, t)
                 ivCover.translationY = -scrollInDp
                 ivCover.alpha = lerp(1f, 0f, covert)
                 separator1.alpha = lerp(0f, 1f, titleT)

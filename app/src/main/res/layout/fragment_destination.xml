@@ -21,10 +21,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/paddingLargeXX"
+            android:onClick="@{()->vm.onBackPress()}"
             android:src="@drawable/ic_arrow_left"
             app:layout_constraintBottom_toBottomOf="@id/tv_previous_page_name"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tv_previous_page_name" />
+            app:layout_constraintTop_toTopOf="@id/tv_previous_page_name"
+            app:tint="@color/md_light_blue_A150" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_previous_page_name"
@@ -33,7 +35,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/paddingMedium"
             android:layout_marginTop="@dimen/paddingMedium"
-            android:text="Destinations"
+            android:onClick="@{()->vm.onBackPress()}"
+            android:text="@{vm.previousPageName}"
+            android:textColor="@color/md_light_blue_A150"
             app:layout_constraintStart_toEndOf="@+id/iv_back"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,26 +57,27 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_title"
+            fonti="@{vm.app.m.fontBold}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/paddingLargeXX"
             android:layout_marginTop="@dimen/paddingLargeXXXXX"
             android:text="London"
-            fonti="@{vm.app.m.fontBold}"
+            android:textColor="?attr/colorText0"
             android:textSize="@dimen/textLargeXXX"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_back" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_title_34sp"
+            fonti="@{vm.app.m.fontBold}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/paddingLargeXX"
             android:layout_marginTop="@dimen/paddingLargeXXXXX"
             android:text="London"
-            android:visibility="invisible"
-            fonti="@{vm.app.m.fontBold}"
             android:textSize="@dimen/textLargeXXX"
+            android:visibility="invisible"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_back" />
 
@@ -91,6 +96,7 @@
         <com.google.android.material.textview.MaterialTextView
 
             android:id="@+id/tv_description"
+            fonti="@{vm.app.m.fontMedium}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/paddingLargeXX"
@@ -101,11 +107,25 @@ blaha blaha blahsdaskdkasdjskadjkasjdksajdasjdkasjdkasjdaskjdaksjdaksjdkasjdajdk
 sadasdasjfkasjf;asfjasjfasjdasdjlsadjlasdjasdjasjdasdjas
 sakdasdasldjalsdjlasjdeirjiewueghsdhfjdshak.jghruhjdasfhjdslhfdsl
 
-" app:layout_constraintEnd_toStartOf="@id/half"
+"
+            android:textColor="?attr/colorText2"
+            app:layout_constraintEnd_toStartOf="@id/half"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_link"
+            style="?android:listSeparatorTextViewStyle"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeXX"
+            android:layout_marginTop="@dimen/paddingLarge"
+            android:text="Wikipedia"
+            android:textAllCaps="false"
+            android:textColor="?attr/colorText0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description" />
 
         <ImageView
             android:id="@+id/iv_cover"
@@ -130,7 +150,7 @@ sakdasdasldjalsdjlasjdeirjiewueghsdhfjdshak.jghruhjdasfhjdslhfdsl
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
                     android:layout_marginHorizontal="@dimen/paddingLarge"
-                    android:layout_marginTop="398dp"
+                    android:layout_marginTop="422dp"
                     android:background="?attr/colorSeparator"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -142,6 +162,7 @@ sakdasdasldjalsdjlasjdeirjiewueghsdhfjdshak.jghruhjdasfhjdslhfdsl
                     android:layout_marginStart="@dimen/paddingLargeXX"
                     android:layout_marginTop="@dimen/paddingLarge"
                     android:text="@{vm.app.m.travels}"
+                    android:textColor="?attr/colorText0"
                     android:textSize="@dimen/textLargeXX"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/separator2"
@@ -153,7 +174,9 @@ sakdasdasldjalsdjlasjdeirjiewueghsdhfjdshak.jghruhjdasfhjdslhfdsl
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/paddingLargeXX"
+                    android:layout_marginTop="-12dp"
                     android:text="28 total travels for london"
+                    android:textColor="?attr/colorText2"
                     android:textSize="@dimen/textLarge"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_travels"
@@ -213,6 +236,7 @@ sakdasdasldjalsdjlasjdeirjiewueghsdhfjdshak.jghruhjdasfhjdslhfdsl
                     android:layout_marginStart="@dimen/paddingLargeXX"
                     android:layout_marginTop="@dimen/paddingLarge"
                     android:text="@{vm.app.m.Guides}"
+                    android:textColor="?attr/colorText0"
                     android:textSize="@dimen/textLargeXX"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator3"
@@ -224,6 +248,7 @@ sakdasdasldjalsdjlasjdeirjiewueghsdhfjdshak.jghruhjdasfhjdslhfdsl
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@{vm.app.m.seeAll}"
+                    android:textColor="@color/md_light_blue_A150"
                     android:textSize="@dimen/textLarge"
                     app:layout_constraintBottom_toBottomOf="@id/tv_guides_title"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -248,7 +273,7 @@ sakdasdasldjalsdjlasjdeirjiewueghsdhfjdshak.jghruhjdasfhjdslhfdsl
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/paddingLarge"
                     android:clipToPadding="false"
-                    android:paddingHorizontal="@dimen/paddingLargeXX"
+                    android:paddingHorizontal="8dp"
                     app:layout_constraintTop_toBottomOf="@+id/tv_guides_title" />
 
                 <View
@@ -268,6 +293,7 @@ sakdasdasldjalsdjlasjdeirjiewueghsdhfjdshak.jghruhjdasfhjdslhfdsl
                     android:layout_marginStart="@dimen/paddingLargeXX"
                     android:layout_marginTop="@dimen/paddingLarge"
                     android:text="@{vm.app.m.travels}"
+                    android:textColor="?attr/colorText0"
                     android:textSize="@dimen/textLargeXX"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/separator4"
@@ -279,7 +305,9 @@ sakdasdasldjalsdjlasjdeirjiewueghsdhfjdshak.jghruhjdasfhjdslhfdsl
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/paddingLargeXX"
+                    android:layout_marginTop="-20dp"
                     android:text="28 total travels for london"
+                    android:textColor="?attr/colorText2"
                     android:textSize="@dimen/textLarge"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_travels_2"
@@ -315,7 +343,11 @@ sakdasdasldjalsdjlasjdeirjiewueghsdhfjdshak.jghruhjdasfhjdslhfdsl
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/paddingLarge"
+                    android:clipToPadding="false"
                     android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="@dimen/paddingLargeXX"
+                    android:paddingBottom="@dimen/paddingLargeXX"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintTop_toBottomOf="@+id/tv_travels_description_2" />
 

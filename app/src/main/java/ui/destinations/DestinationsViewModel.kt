@@ -11,7 +11,7 @@ import javax.inject.Inject
 class DestinationsViewModel @Inject constructor(app: ApplicationClass) : BaseViewModel<DestinationsEvent, DestinationsAction>(app), DestinationsAction {
     override fun onDestinationItemClick() {
         viewModelScope.launch {
-            _event.send(DestinationsEvent.NavToDestinations)
+            _event.send(DestinationsEvent.NavToDestinations(app.m.destinations))
         }
     }
 }

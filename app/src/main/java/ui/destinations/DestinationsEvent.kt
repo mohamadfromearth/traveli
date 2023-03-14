@@ -3,5 +3,5 @@ package ui.destinations
 import ui.base.BaseEvent
 
 sealed class DestinationsEvent : BaseEvent() {
-    object NavToDestinations : DestinationsEvent()
+    data class NavToDestinations(val pageName: String) : DestinationsEvent()
 }

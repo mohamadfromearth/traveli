@@ -3,6 +3,7 @@ package ui.destinations
 import adapter.DestinationAdapter
 import android.os.Bundle
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -11,6 +12,7 @@ import com.xodus.traveli.R
 import com.xodus.traveli.databinding.FragmentDestinationsBinding
 import dagger.hilt.android.AndroidEntryPoint
 import ui.base.BaseFragment
+import util.Constant.KEY_PAGE_NAME
 import util.extension.convertDPtoPX
 import util.extension.convertPXtoDP
 import util.extension.lerp
@@ -38,7 +40,10 @@ class DestinationsFragment : BaseFragment<FragmentDestinationsBinding, Destinati
         lifecycleScope.launchWhenStarted {
             viewModel.event.collect {
                 when (it) {
-                    DestinationsEvent.NavToDestinations -> findNavController().navigate(R.id.action_destinationsFragment_to_destinationFragment)
+                    is DestinationsEvent.NavToDestinations ->
+                        findNavController().navigate(R.id.action_destinationsFragment_to_destinationFragment, Bundle().apply {
+                            putString(KEY_PAGE_NAME,it.pageName)
+                        })
                 }
             }
         }

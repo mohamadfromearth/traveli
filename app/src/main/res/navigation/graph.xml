@@ -62,6 +62,10 @@
     <fragment
         android:id="@+id/destinationFragment"
         android:name="ui.destination.DestinationFragment"
-        android:label="DestinationFragment" />
+        android:label="DestinationFragment" >
+        <argument
+            android:name="previousPageName"
+            app:argType="string" />
+    </fragment>
 
 </navigation>

@@ -112,6 +112,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/paddingLargeXX"
+                    android:layout_marginTop="-12dp"
                     android:text="@{vm.app.m.whatOthersHaveEnjoyed}"
                     android:textColor="?attr/colorText2"
                     android:textSize="@dimen/textLarge"
@@ -218,7 +219,7 @@
                     android:layout_height="wrap_content"
                     android:clipToPadding="false"
                     android:orientation="horizontal"
-                    android:paddingHorizontal="12dp"
+                    android:paddingHorizontal="8dp"
                     app:layout_constraintTop_toBottomOf="@+id/tv_top_guides_title" />
 
                 <View
@@ -250,6 +251,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/paddingLargeXX"
+                    android:layout_marginTop="-12dp"
                     android:text="@{vm.app.m.theLatestExperiencesOutThere}"
                     android:textColor="?attr/colorText2"
                     android:textSize="@dimen/textLarge"

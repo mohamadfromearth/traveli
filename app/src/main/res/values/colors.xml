@@ -2,19 +2,19 @@
 <resources>
     <!--  Dark : Blue  -->
     <color name="darkBlueColorPrimary">#AD1457</color>
-    <color name="darkBlueColorPrimaryDark">#880E4F</color>
+    <color name="darkBlueColorPrimaryDark">#1E1E1E</color>
     <color name="darkBlueColorAccent">#FFEB3B</color>
     <color name="darkBlueBackground0">#1E1E1E</color>
     <color name="darkBlueBackground1">#484848</color>
     <color name="darkBlueBackground2">#686868</color>
-    <color name="darkBlueText0">#FFFFFF</color>
+    <color name="darkBlueText0">#EFEFEF</color>
     <color name="darkBlueText1">#DBDBDB</color>
-    <color name="darkBlueText2">#717171</color>
+    <color name="darkBlueText2">#BDBDBD</color>
     <color name="darkBlueButtonBackground">@color/darkBlueColorPrimary</color>
     <color name="darkBlueButtonText">@color/darkBlueText0</color>
     <!--    <color name="darkBlueRipple">@color/darkBlueColorPrimary</color>-->
     <color name="darkBlueRipple">@color/md_white_1000</color>
-    <color name="darkBlueSeparator">#B9B9BB</color>
+    <color name="darkBlueSeparator">#656565</color>
 
     <!--  Light : Pink  -->
     <color name="lightPinkColorPrimary">#F48FB1</color>
