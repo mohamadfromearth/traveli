@@ -6,7 +6,7 @@
 
         <variable
             name="vm"
-            type="ui.destination.DestinationsViewModel" />
+            type="ui.destination.DestinationViewModel" />
 
     </data>
 
@@ -16,113 +16,161 @@
         android:layout_height="match_parent"
         android:background="?attr/colorBackground0">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_16_sp_travels"
+        <ImageView
+            android:id="@+id/iv_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{vm.app.m.destinations}"
-            android:textSize="@dimen/textLargeX"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/paddingLargeXX"
+            android:src="@drawable/ic_arrow_left"
+            app:layout_constraintBottom_toBottomOf="@id/tv_previous_page_name"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_previous_page_name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_previous_page_name"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingMedium"
+            android:layout_marginTop="@dimen/paddingMedium"
+            android:text="Destinations"
+            app:layout_constraintStart_toEndOf="@+id/iv_back"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/separator1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="?attr/colorSeparator"
+            app:layout_constraintTop_toBottomOf="@id/tv_previous_page_name" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/half"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_title"
-            fonti="@{vm.app.m.fontBold}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/paddingLargeXX"
             android:layout_marginTop="@dimen/paddingLargeXXXXX"
-            android:text="@{vm.app.m.destinations}"
-            android:textColor="?attr/colorText0"
+            android:text="London"
+            fonti="@{vm.app.m.fontBold}"
             android:textSize="@dimen/textLargeXXX"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Destinations" />
+            app:layout_constraintTop_toBottomOf="@+id/iv_back" />
 
-        <View
-            android:id="@+id/separator"
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title_34sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeXX"
+            android:layout_marginTop="@dimen/paddingLargeXXXXX"
+            android:text="London"
+            android:visibility="invisible"
+            fonti="@{vm.app.m.fontBold}"
+            android:textSize="@dimen/textLargeXXX"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_back" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title_16sp"
+            fonti="@{vm.app.m.fontBold}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="London"
+            android:textSize="@dimen/textLargeX"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_back"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+
+            android:id="@+id/tv_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeXX"
+            android:layout_marginTop="118dp"
+            android:text="Hello this bullshit is for test i dont know what
+should write here and it realy doesnt matter who give a shit? ha hahahhahahahahhahahahahah
+blaha blaha blahsdaskdkasdjskadjkasjdksajdasjdkasjdkasjdaskjdaksjdaksjdkasjdajdkajdlajasjda asdasdsdad
+sadasdasjfkasjf;asfjasjfasjdasdjlsadjlasdjasdjasjdasdjas
+sakdasdasldjalsdjlasjdeirjiewueghsdhfjdshak.jghruhjdasfhjdslhfdsl
+
+" app:layout_constraintEnd_toStartOf="@id/half"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <ImageView
+            android:id="@+id/iv_cover"
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginTop="-3dp"
-            android:background="?attr/colorSeparator"
-            android:elevation="5dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+            android:layout_height="390dp"
+            android:src="@drawable/ic_link"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.core.widget.NestedScrollView
-            android:id="@+id/scrollView"
+            android:id="@+id/ns"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="37dp"
+            android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/separator1">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_destination"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clipToPadding="false"
-                    android:orientation="horizontal"
-                    android:paddingStart="@dimen/paddingLargeXX"
-                    android:paddingTop="80dp"
-                    android:paddingEnd="12dp"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:layout_constraintTop_toTopOf="parent" />
 
                 <View
                     android:id="@+id/separator2"
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
                     android:layout_marginHorizontal="@dimen/paddingLarge"
-                    android:layout_marginTop="@dimen/paddingLarge"
+                    android:layout_marginTop="398dp"
                     android:background="?attr/colorSeparator"
-                    app:layout_constraintTop_toBottomOf="@id/rv_destination" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_adventurous"
+                    android:id="@+id/tv_travels"
                     fonti="@{vm.app.m.fontMedium}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/paddingLargeXX"
                     android:layout_marginTop="@dimen/paddingLarge"
-                    android:text="Adventurous"
-                    android:textColor="?attr/colorText0"
+                    android:text="@{vm.app.m.travels}"
                     android:textSize="@dimen/textLargeXX"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/separator2"
-                    tools:text="Adventurous" />
+                    tools:text="Travels" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_adventurous_description"
+                    android:id="@+id/tv_travels_description"
                     fonti="@{vm.app.m.fontMedium}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/paddingLargeXX"
-                    android:text="Experience the unknown"
-                    android:textColor="?attr/colorText2"
+                    android:text="28 total travels for london"
                     android:textSize="@dimen/textLarge"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_adventurous"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_travels"
                     tools:text="What others have enjoyed" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_adventurous_see_all"
+                    android:id="@+id/tv_travels_see_all"
                     fonti="@{vm.app.m.fontMedium}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@{vm.app.m.seeAll}"
                     android:textColor="@color/md_light_blue_A150"
                     android:textSize="@dimen/textLarge"
-                    app:layout_constraintBottom_toBottomOf="@id/tv_adventurous_description"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_travels_description"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/iv_see_all"
-                    app:layout_constraintTop_toTopOf="@id/tv_adventurous"
+                    app:layout_constraintTop_toTopOf="@id/tv_travels"
                     tools:text="See all" />
 
                 <ImageView
@@ -131,22 +179,22 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/paddingLargeXX"
                     android:src="@drawable/ic_arrow_right"
-                    app:layout_constraintBottom_toBottomOf="@id/tv_adventurous_see_all"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_travels_see_all"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tv_adventurous_see_all"
+                    app:layout_constraintTop_toTopOf="@id/tv_travels_see_all"
                     app:tint="@color/md_light_blue_A150" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_destination_2"
+                    android:id="@+id/rv_travels"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/paddingLarge"
                     android:clipToPadding="false"
                     android:orientation="horizontal"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="12dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="@dimen/paddingLargeXX"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:layout_constraintTop_toBottomOf="@id/tv_adventurous_description" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_travels_description" />
 
                 <View
                     android:id="@+id/separator3"
@@ -155,72 +203,121 @@
                     android:layout_marginHorizontal="@dimen/paddingLarge"
                     android:layout_marginTop="@dimen/paddingLarge"
                     android:background="?attr/colorSeparator"
-                    app:layout_constraintTop_toBottomOf="@id/rv_destination_2" />
+                    app:layout_constraintTop_toBottomOf="@id/rv_travels" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_most_visited"
+                    android:id="@+id/tv_guides_title"
                     fonti="@{vm.app.m.fontMedium}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/paddingLargeXX"
                     android:layout_marginTop="@dimen/paddingLarge"
-                    android:text="Most visited"
-                    android:textColor="?attr/colorText0"
+                    android:text="@{vm.app.m.Guides}"
                     android:textSize="@dimen/textLargeXX"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/separator3" />
+                    app:layout_constraintTop_toBottomOf="@id/separator3"
+                    tools:text="Guides" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_most_visited_description"
+                    android:id="@+id/tv_guides_see_all"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{vm.app.m.seeAll}"
+                    android:textSize="@dimen/textLarge"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_guides_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_see_all"
+                    app:layout_constraintTop_toTopOf="@id/tv_guides_title"
+                    tools:text="See all" />
+
+                <ImageView
+                    android:id="@+id/iv_top_guides_see_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/paddingLargeXX"
+                    android:src="@drawable/ic_arrow_right"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_guides_see_all"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_guides_see_all"
+                    app:tint="@color/md_light_blue_A150" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_guides"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/paddingLarge"
+                    android:clipToPadding="false"
+                    android:paddingHorizontal="@dimen/paddingLargeXX"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_guides_title" />
+
+                <View
+                    android:id="@+id/separator4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginHorizontal="@dimen/paddingLarge"
+                    android:layout_marginTop="@dimen/paddingLarge"
+                    android:background="?attr/colorSeparator"
+                    app:layout_constraintTop_toBottomOf="@id/rv_guides" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_travels_2"
                     fonti="@{vm.app.m.fontMedium}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/paddingLargeXX"
-                    android:text="Experience the unknown"
-                    android:textSize="@dimen/textLarge"
-                    android:textColor="?attr/colorText2"
+                    android:layout_marginTop="@dimen/paddingLarge"
+                    android:text="@{vm.app.m.travels}"
+                    android:textSize="@dimen/textLargeXX"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_most_visited"
+                    app:layout_constraintTop_toBottomOf="@+id/separator4"
+                    tools:text="Travels" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_travels_description_2"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/paddingLargeXX"
+                    android:text="28 total travels for london"
+                    android:textSize="@dimen/textLarge"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_travels_2"
                     tools:text="What others have enjoyed" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_most_visited_see_all"
+                    android:id="@+id/tv_travels_see_all_2"
                     fonti="@{vm.app.m.fontMedium}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@{vm.app.m.seeAll}"
                     android:textColor="@color/md_light_blue_A150"
                     android:textSize="@dimen/textLarge"
-                    app:layout_constraintBottom_toBottomOf="@id/tv_most_visited_description"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_travels_description_2"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/iv_see_all"
-                    app:layout_constraintTop_toTopOf="@id/tv_most_visited"
-                    tools:text="See all"
-
-                    />
+                    app:layout_constraintEnd_toStartOf="@+id/iv_see_all_2"
+                    app:layout_constraintTop_toTopOf="@id/tv_travels_2"
+                    tools:text="See all" />
 
                 <ImageView
-                    android:id="@+id/iv_most_visited_see_all"
+                    android:id="@+id/iv_see_all_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/paddingLargeXX"
                     android:src="@drawable/ic_arrow_right"
-                    app:layout_constraintBottom_toBottomOf="@id/tv_most_visited_see_all"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_travels_see_all_2"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tv_most_visited_see_all"
+                    app:layout_constraintTop_toTopOf="@id/tv_travels_see_all_2"
                     app:tint="@color/md_light_blue_A150" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_destination_3"
+                    android:id="@+id/rv_travels_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/paddingLarge"
-                    android:clipToPadding="false"
                     android:orientation="horizontal"
-                    android:paddingStart="@dimen/paddingLargeXX"
-                    android:paddingEnd="12dp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_most_visited_description" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_travels_description_2" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

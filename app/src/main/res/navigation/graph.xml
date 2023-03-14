@@ -53,7 +53,15 @@
     </fragment>
     <fragment
         android:id="@+id/destinationsFragment"
-        android:name="ui.destination.DestinationsFragment"
-        android:label="DestinationsFragment" />
+        android:name="ui.destinations.DestinationsFragment"
+        android:label="DestinationsFragment" >
+        <action
+            android:id="@+id/action_destinationsFragment_to_destinationFragment"
+            app:destination="@id/destinationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/destinationFragment"
+        android:name="ui.destination.DestinationFragment"
+        android:label="DestinationFragment" />
 
 </navigation>

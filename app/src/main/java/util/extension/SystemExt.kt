@@ -357,9 +357,9 @@ fun convertPXtoDP(px: Float): Float {
     return px / (ApplicationClass.getInstance().resources.displayMetrics.densityDpi.toFloat() / DisplayMetrics.DENSITY_DEFAULT)
 }
 
-fun convertSPtoPX(sp: Float): Int {
+fun convertSPtoPX(sp: Float): Float {
     return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, ApplicationClass.getInstance().resources.displayMetrics)
-        .toInt()
+
 }
 
 fun convertDPtoSP(dp: Float): Int {

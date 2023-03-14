@@ -12,7 +12,7 @@ import com.xodus.traveli.databinding.RowRectAngleDestinationBinding
 import com.xodus.traveli.databinding.RowSquareDestinationBinding
 import ui.base.BaseActivity
 
-class DestinationAdapter(private val activity: BaseActivity, private val viewType: Int) : RecyclerView.Adapter<ViewHolder>() {
+class DestinationAdapter(private val activity: BaseActivity, private val viewType: Int, private val onItemClick: (pos: Int) -> Unit) : RecyclerView.Adapter<ViewHolder>() {
     companion object {
         const val VIEW_TYPE_RECT_ANGLE = 0
         const val VIEW_TYPE_SQUARE = 1
@@ -25,22 +25,27 @@ class DestinationAdapter(private val activity: BaseActivity, private val viewTyp
                 ivDestination.load("https://travellersworldwide.com/wp-content/uploads/2022/06/shutterstock_552100717.png.webp") {
                     scale(Scale.FIT)
                 }
-            }
-        }
-    }
-
-    inner class SquareDestinationHolder(private val binding: RowSquareDestinationBinding) : ViewHolder(binding.root){
-        fun bind(){
-            binding.apply {
-                app = activity.app
-                ivDestination.load("https://travellersworldwide.com/wp-content/uploads/2022/06/shutterstock_552100717.png.webp") {
-                    scale(Scale.FIT)
+                parent.setOnClickListener {
+                    onItemClick(bindingAdapterPosition)
                 }
             }
         }
     }
 
+    inner class SquareDestinationHolder(private val binding: RowSquareDestinationBinding) : ViewHolder(binding.root) {
+        fun bind() {
+            binding.apply {
+                app = activity.app
+                ivDestination.load("https://travellersworldwide.com/wp-content/uploads/2022/06/shutterstock_552100717.png.webp") {
+                    scale(Scale.FIT)
+                }
 
+                parent.setOnClickListener {
+                    onItemClick(bindingAdapterPosition)
+                }
+            }
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return when (this.viewType) {

@@ -130,5 +130,10 @@ class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
 
     // guides screen
     override val guides: String = "Guides"
+
+    //destination
     override val destinations: String = "Destinations"
+
+    //destination
+
 }

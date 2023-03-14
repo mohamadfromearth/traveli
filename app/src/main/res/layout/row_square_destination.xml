@@ -11,6 +11,7 @@
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/parent"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginEnd="@dimen/paddingMedium"
@@ -39,9 +40,9 @@
             fonti="@{app.m.fontMedium}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="-8dp"
             android:text="18 travels"
             android:textColor="?attr/colorText2"
-            android:layout_marginTop="-8dp"
             android:textSize="@dimen/textLarge" />
 
     </LinearLayout>
