@@ -16,7 +16,7 @@
         android:title="" />
 
     <item
-        android:id="@+id/profileTabFragments"
+        android:id="@+id/bookMarkTabFragment"
         android:icon="@drawable/ic_bookmark"
         android:title="" />
 

@@ -67,5 +67,17 @@
             android:name="previousPageName"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/bookMarkTabFragment"
+        android:name="ui.BookMarkTabFragment"
+        android:label="BookMarkTabFragment" >
+        <action
+            android:id="@+id/action_bookMarkTabFragment_to_getEmailFragment"
+            app:destination="@id/getEmailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/getEmailFragment"
+        android:name="ui.auth.getEmail.GetEmailFragment"
+        android:label="GetEmailFragment" />
 
 </navigation>

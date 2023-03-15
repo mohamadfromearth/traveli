@@ -137,7 +137,14 @@ interface LanguageInterface {
     // destinations
     val destinations: String
 
-
+    //Auth
+    val enterYourEmail: String
+    val email: String
+    val `continue`: String
+    val or: String
+    val hiThere: String
+    val getEmailHint: String
+    val continueWithGoogle: String
 
     fun priceCannotBeLowerThanX(value: String) = "$priceCannotBeLowerThanX1 $value $priceCannotBeLowerThanX2"
     fun priceCannotBeHigherThanX(value: String) = "$priceCannotBeHigherThanX1 $value $priceCannotBeHigherThanX2"

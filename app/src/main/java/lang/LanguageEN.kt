@@ -134,6 +134,12 @@ class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
     //destination
     override val destinations: String = "Destinations"
 
-    //destination
-
+    // auth
+    override val enterYourEmail: String = "Enter your email"
+    override val email: String = "Email"
+    override val `continue`: String = "Continue"
+    override val or: String = "Or"
+    override val hiThere: String = "Hi there!"
+    override val getEmailHint: String = "Login or register to your account by entering your email below" //destination
+    override val continueWithGoogle: String = "Continue with Google"
 }
