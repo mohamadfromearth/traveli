@@ -34,7 +34,8 @@ class GetEmailFragment : BaseFragment<FragmentGetEmailBinding, GetEmailEvent, Ge
         lifecycleScope.launchWhenStarted {
             viewModel.event.collect {
                 when (it) {
-                    is GetEmailEvent.NavToGetPassword -> Unit
+                    is GetEmailEvent.NavToGetPassword ->
+                        findNavController().navigate(R.id.action_getEmailFragment_to_getPasswordFragment)
                 }
             }
         }

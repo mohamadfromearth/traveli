@@ -78,6 +78,18 @@
     <fragment
         android:id="@+id/getEmailFragment"
         android:name="ui.auth.getEmail.GetEmailFragment"
-        android:label="GetEmailFragment" />
+        android:label="GetEmailFragment" >
+        <action
+            android:id="@+id/action_getEmailFragment_to_getPasswordFragment"
+            app:destination="@id/getPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/getPasswordFragment"
+        android:name="ui.auth.getPassword.GetPasswordFragment"
+        android:label="GetPasswordFragment" >
+        <argument
+            android:name="email"
+            app:argType="string" />
+    </fragment>
 
 </navigation>

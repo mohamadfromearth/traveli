@@ -142,4 +142,10 @@ class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
     override val hiThere: String = "Hi there!"
     override val getEmailHint: String = "Login or register to your account by entering your email below" //destination
     override val continueWithGoogle: String = "Continue with Google"
+    override val password: String = "Password"
+    override val enterYourPassword: String = "Enter your password"
+    override val forgotPassword: String = "Forgot password?"
+    override val changeEmail: String = "Change Email"
+    override val awesome: String = "Awesome"
+    override val getPasswordDescription:String = "You already have Travelly account,enter it's password to login"
 }

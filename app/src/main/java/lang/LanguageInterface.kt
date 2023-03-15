@@ -145,6 +145,12 @@ interface LanguageInterface {
     val hiThere: String
     val getEmailHint: String
     val continueWithGoogle: String
+    val password: String
+    val enterYourPassword: String
+    val forgotPassword: String
+    val changeEmail: String
+    val awesome: String
+    val getPasswordDescription: String
 
     fun priceCannotBeLowerThanX(value: String) = "$priceCannotBeLowerThanX1 $value $priceCannotBeLowerThanX2"
     fun priceCannotBeHigherThanX(value: String) = "$priceCannotBeHigherThanX1 $value $priceCannotBeHigherThanX2"
