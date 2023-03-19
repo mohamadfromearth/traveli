@@ -151,6 +151,24 @@ interface LanguageInterface {
     val changeEmail: String
     val awesome: String
     val getPasswordDescription: String
+    val signUpTitle: String
+    val signingUpWith: String
+    val signUpDescription: String
+    val yourName: String
+    val enterYourName: String
+    val newPassword: String
+    val repeatNewPassword: String
+    val repeatYourPassword: String
+
+    //profile
+    val edit: String
+    val purchased: String
+    val transaction: String
+    val changePassword: String
+    val termsAndCondition: String
+    val privacyPolicy: String
+    val becomeGuide: String
+    val becomeGuideDescription: String
 
     fun priceCannotBeLowerThanX(value: String) = "$priceCannotBeLowerThanX1 $value $priceCannotBeLowerThanX2"
     fun priceCannotBeHigherThanX(value: String) = "$priceCannotBeHigherThanX1 $value $priceCannotBeHigherThanX2"

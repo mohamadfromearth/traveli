@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="ui.profile.ProfileViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorBackground0">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/paddingLargeXX"
+            android:layout_marginEnd="@dimen/paddingLargeXX"
+            android:text="@{vm.app.m.edit}"
+            android:textColor="@color/md_light_blue_A150"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="80dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_userName"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tony stark"
+            android:textSize="@dimen/textLargeX"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tony@gmail.com"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_userName" />
+
+        <!--    purchased and transactions    -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_profile_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/paddingLargeXX"
+            android:layout_marginTop="@dimen/paddingLargeXXX"
+            android:paddingVertical="@dimen/paddingLarge"
+            app:cardBackgroundColor="?attr/colorBackground2"
+            app:cardCornerRadius="@dimen/radiusLarge"
+            app:layout_constraintTop_toBottomOf="@id/tv_email">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/paddingLarge">
+
+                <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+                    android:id="@+id/cl_purchased"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_purchased"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="@dimen/paddingLargeX"
+                        android:src="@drawable/ic_rounded_square"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_purchased"
+                        fonti="@{vm.app.m.fontMedium}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/paddingLarge"
+                        android:text="@{vm.app.m.purchased}"
+                        android:textSize="@dimen/textLargeX"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_purchased"
+                        app:layout_constraintStart_toEndOf="@id/iv_purchased"
+                        app:layout_constraintTop_toTopOf="@id/iv_purchased"
+                        tools:text="Purchase" />
+
+                    <ImageView
+                        android:id="@+id/iv_purchased_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/paddingLargeX"
+                        android:src="@drawable/ic_arrow_right"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_purchased"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_purchased" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/separator_1"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="?attr/colorSeparator"
+                    app:layout_constraintBottom_toTopOf="@+id/iv_transactions"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_purchased"
+                    app:layout_constraintTop_toBottomOf="@id/iv_purchased" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/paddingLarge">
+
+                    <ImageView
+                        android:id="@+id/iv_transactions"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="@dimen/paddingLargeX"
+                        android:src="@drawable/ic_purple_rounded_square"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_transaction"
+                        fonti="@{vm.app.m.fontMedium}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/paddingLarge"
+                        android:text="@{vm.app.m.transaction}"
+                        android:textSize="@dimen/textLargeX"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_transactions"
+                        app:layout_constraintStart_toEndOf="@+id/iv_transactions"
+                        app:layout_constraintTop_toTopOf="@id/iv_transactions" />
+
+                    <ImageView
+                        android:id="@+id/iv_transaction_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/paddingLargeX"
+                        android:src="@drawable/ic_arrow_right"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_transaction"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_transaction" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_profile_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/paddingLargeXX"
+            android:layout_marginTop="@dimen/paddingLargeXX"
+            android:paddingVertical="@dimen/paddingLarge"
+            app:cardBackgroundColor="?attr/colorBackground2"
+            app:cardCornerRadius="@dimen/radiusLarge"
+            app:layout_constraintTop_toBottomOf="@id/cv_profile_1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/cl_change_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/paddingLarge">
+
+                <ImageView
+                    android:id="@+id/iv_change_password"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="@dimen/paddingLargeX"
+                    android:src="@drawable/ic_rounded_square"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_change_password"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/paddingLarge"
+                    android:text="@{vm.app.m.changePassword}"
+                    android:textSize="@dimen/textLargeX"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_change_password"
+                    app:layout_constraintStart_toEndOf="@id/iv_change_password"
+                    app:layout_constraintTop_toTopOf="@id/iv_change_password"
+                    tools:text="Purchase" />
+
+                <ImageView
+                    android:id="@+id/iv_change_password_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/paddingLargeX"
+                    android:src="@drawable/ic_arrow_right"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_change_password"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_change_password" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_profile_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/paddingLargeXX"
+            android:layout_marginTop="@dimen/paddingLargeXX"
+            android:paddingVertical="@dimen/paddingLarge"
+            app:cardBackgroundColor="?attr/colorBackground2"
+            app:cardCornerRadius="@dimen/radiusLarge"
+            app:layout_constraintTop_toBottomOf="@id/cv_profile_2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/paddingLarge">
+
+                <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+                    android:id="@+id/cl_terms_and_conditions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_terms_and_conditions"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="@dimen/paddingLargeX"
+                        android:src="@drawable/ic_rounded_square"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_terms_and_conditions"
+                        fonti="@{vm.app.m.fontMedium}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/paddingLarge"
+                        android:text="@{vm.app.m.termsAndCondition}"
+                        android:textSize="@dimen/textLargeX"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_terms_and_conditions"
+                        app:layout_constraintStart_toEndOf="@id/iv_terms_and_conditions"
+                        app:layout_constraintTop_toTopOf="@id/iv_terms_and_conditions"
+                        tools:text="Purchase" />
+
+                    <ImageView
+                        android:id="@+id/iv_terms_and_conditions_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/paddingLargeX"
+                        android:src="@drawable/ic_arrow_right"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_terms_and_conditions"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_terms_and_conditions" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/separator_2"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="?attr/colorSeparator"
+                    app:layout_constraintBottom_toTopOf="@+id/iv_transactions"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_purchased"
+                    app:layout_constraintTop_toBottomOf="@id/iv_purchased" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/paddingLarge">
+
+                    <ImageView
+                        android:id="@+id/iv_privacy_policy"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="@dimen/paddingLargeX"
+                        android:src="@drawable/ic_purple_rounded_square"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_privacy_policy"
+                        fonti="@{vm.app.m.fontMedium}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/paddingLarge"
+                        android:text="@{vm.app.m.privacyPolicy}"
+                        android:textSize="@dimen/textLargeX"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_privacy_policy"
+                        app:layout_constraintStart_toEndOf="@+id/iv_privacy_policy"
+                        app:layout_constraintTop_toTopOf="@id/iv_privacy_policy" />
+
+                    <ImageView
+                        android:id="@+id/iv_privacy_policy_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/paddingLargeX"
+                        android:src="@drawable/ic_arrow_right"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_privacy_policy"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_privacy_policy" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_become_guide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/paddingLargeX"
+            android:layout_marginTop="@dimen/paddingLargeXXX"
+            app:cardBackgroundColor="?attr/colorBackground2"
+            app:cardCornerRadius="@dimen/radiusLarge"
+            app:layout_constraintTop_toBottomOf="@+id/cv_profile_3"
+
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/paddingLarge">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_become_guide_title"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/paddingLarge"
+                    android:text="@{vm.app.m.becomeGuide}"
+                    android:textSize="@dimen/textLargeX"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Become a guide" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_become_guide_description"
+                    fonti="@{vm.app.m.fontMedium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/paddingLarge"
+                    android:text="@{vm.app.m.becomeGuideDescription}"
+                    android:textSize="@dimen/textLarge"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_become_guide_title"
+                    tools:text="Fill out a small form to get started" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/paddingLarge"
+                    android:src="@drawable/ic_arrow_right"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
+

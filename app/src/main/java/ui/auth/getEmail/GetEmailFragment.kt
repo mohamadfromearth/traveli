@@ -36,6 +36,7 @@ class GetEmailFragment : BaseFragment<FragmentGetEmailBinding, GetEmailEvent, Ge
                 when (it) {
                     is GetEmailEvent.NavToGetPassword ->
                         findNavController().navigate(R.id.action_getEmailFragment_to_getPasswordFragment)
+                    is GetEmailEvent.NavToSignUp      -> findNavController().navigate(R.id.action_getEmailFragment_to_signUpFragment)
                 }
             }
         }

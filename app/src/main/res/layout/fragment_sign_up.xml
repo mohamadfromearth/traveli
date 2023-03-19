@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -11,8 +11,170 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeXX"
+            android:layout_marginTop="100dp"
+            android:text="@{vm.app.m.awesome}"
+            android:textColor="?attr/colorText0"
+            android:textSize="@dimen/textLargeX"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Hi There!" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_signing_up_with"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeXX"
+            android:text="@{vm.app.m.signingUpWith}"
+            android:textColor="?attr/colorText2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            tools:text="Login or register to your acount" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_gmail"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingSmall"
+            android:text="MohamadhoseinKhalili174@gmail.com"
+            android:textColor="?attr/colorText0"
+            android:textSize="@dimen/textLarge"
+            app:layout_constraintStart_toEndOf="@+id/tv_signing_up_with"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_description"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeXX"
+            android:text="@{vm.app.m.signUpDescription}"
+            android:textColor="?attr/colorText2"
+            android:textSize="@dimen/textLarge"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_gmail"
+
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_your_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="@dimen/paddingLargeXXXXX"
+            android:text="@{vm.app.m.enterYourName}"
+            android:textColor="?attr/colorText2"
+            android:textSize="@dimen/textLarge"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description"
+            tools:text="Email" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_your_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="@dimen/paddingLargeXX"
+            android:layout_marginTop="@dimen/paddingMedium"
+            android:background="@drawable/custom_input"
+            android:hint="@{vm.app.m.enterYourName}"
+            android:paddingHorizontal="@dimen/paddingLarge"
+            app:layout_constraintTop_toBottomOf="@+id/tv_your_name"
+            tools:hint="Enter your email" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_new_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="@dimen/paddingLargeXX"
+            android:text="@{vm.app.m.newPassword}"
+            android:textColor="?attr/colorText2"
+            android:textSize="@dimen/textLarge"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_your_name" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_new_password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="@dimen/paddingLargeXX"
+            android:layout_marginTop="@dimen/paddingMedium"
+            android:background="@drawable/custom_input"
+            android:hint="@{vm.app.m.enterYourPassword}"
+            android:paddingHorizontal="@dimen/paddingLarge"
+            app:layout_constraintTop_toBottomOf="@+id/tv_new_password"
+            tools:hint="Enter your email" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_repeat_new_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="@dimen/paddingLargeXX"
+            android:text="@{vm.app.m.repeatNewPassword}"
+            android:textColor="?attr/colorText2"
+            android:textSize="@dimen/textLarge"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_new_password" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_repeat_password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="@dimen/paddingLargeXX"
+            android:layout_marginTop="@dimen/paddingMedium"
+            android:background="@drawable/custom_input"
+            android:hint="@{vm.app.m.repeatYourPassword}"
+            android:paddingHorizontal="@dimen/paddingLarge"
+            app:layout_constraintTop_toBottomOf="@+id/tv_repeat_new_password"
+            tools:hint="Enter your email" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_continue"
+            style="@style/GeneralButton"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginHorizontal="@dimen/paddingLargeXX"
+            android:layout_marginTop="80dp"
+            android:backgroundTint="?attr/colorButtonBackground"
+            android:text="@{vm.app.m.continue}"
+            android:textColor="?attr/colorButtonText"
+            app:layout_constraintTop_toBottomOf="@id/edt_repeat_password"
+            tools:text="Continue" />
+
+        <ImageView
+            android:id="@+id/iv_change_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeXX"
+            android:layout_marginTop="@dimen/paddingLargeXXXXX"
+            android:src="@drawable/ic_arrow_left"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_continue" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_change_email"
+            fonti="@{vm.app.m.fontBold}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{vm.app.m.changeEmail}"
+            android:textColor="?attr/colorText0"
+            android:textSize="@dimen/textLargeX"
+            app:layout_constraintBottom_toBottomOf="@id/iv_change_email"
+            app:layout_constraintStart_toEndOf="@id/iv_change_email"
+            app:layout_constraintTop_toTopOf="@+id/iv_change_email" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

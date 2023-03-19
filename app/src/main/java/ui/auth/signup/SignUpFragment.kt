@@ -16,4 +16,5 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpEvent, SignUpAc
     }
 
 
+
 }

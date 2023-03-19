@@ -6,7 +6,7 @@
     <color name="darkBlueColorAccent">#FFEB3B</color>
     <color name="darkBlueBackground0">#1E1E1E</color>
     <color name="darkBlueBackground1">#484848</color>
-    <color name="darkBlueBackground2">#686868</color>
+    <color name="darkBlueBackground2">#303030</color>
     <color name="darkBlueText0">#EFEFEF</color>
     <color name="darkBlueText1">#DBDBDB</color>
     <color name="darkBlueText2">#BDBDBD</color>
@@ -22,7 +22,7 @@
     <color name="lightPinkColorAccent">#FFEB3B</color>
     <color name="lightPinkBackground0">#FFFFFF</color>
     <color name="lightPinkBackground1">#FFFFFF</color>
-    <color name="lightPinkBackground2">#B7B7B7</color>
+    <color name="lightPinkBackground2">#FAFAFA</color>
     <color name="lightPinkText0">#000000</color>
     <color name="lightPinkText1">#242424</color>
     <color name="lightPinkText2">#484848</color>
