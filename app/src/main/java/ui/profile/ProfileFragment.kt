@@ -31,9 +31,9 @@ class ProfileFragment() : BaseFragment<FragmentProfileBinding, ProfileEvent, Pro
 
     private fun observeToEvents() {
         lifecycleScope.launchWhenStarted {
-            viewModel.event.collect{
-                when(it){
-                    ProfileEvent.NavToEditProfile -> Unit
+            viewModel.event.collect {
+                when (it) {
+                    ProfileEvent.NavToEditProfile -> findNavController().navigate(R.id.action_profileFragment_to_profileEditFragment)
                 }
             }
         }

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="ui.profileEdit.ProfileEditViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_done"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/paddingLargeXX"
+            android:layout_marginEnd="@dimen/paddingLargeXX"
+            android:text="@{vm.app.m.done}"
+            android:textColor="@color/md_light_blue_A150"
+            android:textSize="@dimen/textLarge"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_cancel"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeXX"
+            android:layout_marginTop="@dimen/paddingLargeXX"
+            android:text="@{vm.app.m.cancel}"
+            android:textColor="@color/md_light_blue_A150"
+            android:textSize="@dimen/textLarge"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="80dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_set_new_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/paddingLarge"
+            android:text="@{vm.app.m.setNewPhoto}"
+            android:textColor="@color/md_light_blue_A150"
+            android:textSize="@dimen/textLargeX"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_profile"
+            app:layout_goneMarginTop="@dimen/paddingMedium" />
+
+        <View
+            android:id="@+id/separator1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/paddingLarge"
+            android:background="?attr/colorSeparator"
+            app:layout_constraintTop_toBottomOf="@+id/tv_set_new_photo" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_name"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeXX"
+            android:layout_marginTop="@dimen/paddingMedium"
+            android:text="@{vm.app.m.name}"
+            android:textSize="@dimen/textLargeX"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/separator1"
+            tools:text="Name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_name_content"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="@dimen/paddingMedium"
+            android:text="Tony stark"
+            android:textSize="@dimen/textLargeX"
+            app:layout_constraintStart_toEndOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@+id/separator1" />
+
+        <View
+            android:id="@+id/separator2"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/paddingMedium"
+            android:background="?attr/colorSeparator"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_email"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeXX"
+            android:layout_marginTop="@dimen/paddingMedium"
+            android:text="@{vm.app.m.email}"
+            android:textSize="@dimen/textLargeX"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separator2"
+            tools:text="Email" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_email_content"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/paddingMedium"
+            android:text="TonyStark@gmail.com"
+            android:textSize="@dimen/textLargeX"
+            app:layout_constraintStart_toStartOf="@id/tv_name_content"
+            app:layout_constraintTop_toBottomOf="@+id/separator2" />
+
+        <View
+            android:id="@+id/separator3"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/paddingMedium"
+            android:background="?attr/colorSeparator"
+            app:layout_constraintTop_toBottomOf="@+id/tv_email" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_bio"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeXX"
+            android:layout_marginTop="@dimen/paddingMedium"
+            android:text="@{vm.app.m.bio}"
+            android:textSize="@dimen/textLargeX"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/separator3"
+            tools:text="Bio" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_bio_content"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/paddingMedium"
+            android:text="a happy traveller blogger  mom"
+            android:textSize="@dimen/textLargeX"
+            app:layout_constraintEnd_toEndOf="@id/tv_set_new_photo"
+            app:layout_constraintStart_toStartOf="@id/tv_name_content"
+            app:layout_constraintTop_toBottomOf="@+id/separator3" />
+
+        <View
+            android:id="@+id/separator4"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/paddingMedium"
+            app:layout_constraintTop_toBottomOf="tv_bio_content"
+
+
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
+

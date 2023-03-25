@@ -60,15 +60,6 @@ interface LanguageInterface {
     val fileIsInvalid: String
     val drafts: String
 
-    //Profile Edit
-    val name: String
-    val hometown: String
-    val bio: String
-    val logout: String
-    val deleteAccount: String
-    val logoutDesc: String
-    val deleteAccountDesc: String
-
     //Transaction
     val balance: String
     val checkout: String
@@ -169,6 +160,10 @@ interface LanguageInterface {
     val privacyPolicy: String
     val becomeGuide: String
     val becomeGuideDescription: String
+    val done: String
+    val setNewPhoto: String
+    val name: String
+    val bio: String
 
     fun priceCannotBeLowerThanX(value: String) = "$priceCannotBeLowerThanX1 $value $priceCannotBeLowerThanX2"
     fun priceCannotBeHigherThanX(value: String) = "$priceCannotBeHigherThanX1 $value $priceCannotBeHigherThanX2"

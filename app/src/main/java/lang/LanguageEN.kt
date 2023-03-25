@@ -63,15 +63,6 @@ class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
     override val fileIsInvalid: String = "File is invalid."
     override val drafts: String = "Drafts"
 
-    //Profile Edit
-    override val name: String = "Name"
-    override val hometown: String = "Hometown"
-    override val bio: String = "Bio"
-    override val logout: String = "Logout"
-    override val deleteAccount: String = "Delete account"
-    override val logoutDesc: String = "Are you sure you want to logout?"
-    override val deleteAccountDesc: String = "Are you sure you want to delete your account permanently?\nAll your data will be lost.\nThis action cannot be undone."
-
     //Transaction
     override val balance: String = "Balance"
     override val checkout: String = "Checkout"
@@ -166,4 +157,8 @@ class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
     override val privacyPolicy: String = "Privacy Policy"
     override val becomeGuide: String = "Become a Guide"
     override val becomeGuideDescription: String = "Fill out a small form to get started"
+    override val done: String = "Done"
+    override val setNewPhoto: String = "Set New Photo"
+    override val name: String = "Name"
+    override val bio: String = "Bio"
 }

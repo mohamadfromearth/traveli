@@ -101,6 +101,14 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="ui.profile.ProfileFragment"
-        android:label="ProfileFragment" />
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_profileEditFragment"
+            app:destination="@id/profileEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileEditFragment"
+        android:name="ui.profileEdit.ProfileEditFragment"
+        android:label="ProfileEditFragment" />
 
 </navigation>

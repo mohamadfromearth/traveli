@@ -65,6 +65,7 @@ class TravelsFragment : BaseFragment<FragmentTravelsBinding, TravelsEvent, Trave
     }
 
     private fun animateTitle() {
+
         binding.scrollView.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener() { v, scrolx, scrollY, oldScrolx, oldScroly ->
             val layoutWidthDivededBy2 = convertPXtoDP((binding.root.width / 2f) - binding.tv16SpTravels.width / 2)
             val scrolInDp = convertPXtoDP(scrollY.toFloat())
