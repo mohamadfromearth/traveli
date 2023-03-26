@@ -7,7 +7,11 @@ import main.ApplicationClass
 
 class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
     override val fontLight: Typeface? get() = ResourcesCompat.getFont(app, R.font.sf_pro_text_light)
-    override val fontMedium: Typeface? get() = ResourcesCompat.getFont(app, R.font.sf_pro_text_medium)
+    override val fontMedium: Typeface?
+        get() = ResourcesCompat.getFont(
+            app,
+            R.font.sf_pro_text_medium
+        )
     override val fontBold: Typeface? get() = ResourcesCompat.getFont(app, R.font.sf_pro_text_bold)
     override val locale = "EN"
     override val appName = "Template Five"
@@ -92,7 +96,8 @@ class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
     override val uploadFailed: String = "Upload failed"
     override val doYouWannaDeleteThisItem: String = "Do you wanna delete this item?"
     override val deleteItem: String = "Delete item"
-    override val someFilesAreBeingUploadedPleaseWait: String = "Some files are being uploaded please wait"
+    override val someFilesAreBeingUploadedPleaseWait: String =
+        "Some files are being uploaded please wait"
 
     // common
     override val skip: String = "Skip"
@@ -101,13 +106,16 @@ class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
     // OnBoarding
     override val firstSlideTitle1: String = "Expectacular"
     override val firstSlideTitle2: String = "Experiences"
-    override val firstSlideDescription: String = "It's been six days since last time I saw your face"
+    override val firstSlideDescription: String =
+        "It's been six days since last time I saw your face"
     override val secondSlideTitle1: String = "Expectacular"
     override val secondSlideTitle2: String = "Experiences"
-    override val secondSlideDescription: String = "It's been six days since last time I saw your face"
+    override val secondSlideDescription: String =
+        "It's been six days since last time I saw your face"
     override val thirdSlideTitle1: String = "Expectacular"
     override val thirdSlideTitle2: String = "Experiences"
-    override val thirdSlideDescription: String = "It's been six days since last time I saw your face"
+    override val thirdSlideDescription: String =
+        "It's been six days since last time I saw your face"
     override val forthSlideTitle1: String = "Let's get"
     override val forthSlideTitle2: String = "Started"
     override val continueToApp: String = "Continue to app >"
@@ -131,17 +139,20 @@ class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
     override val `continue`: String = "Continue"
     override val or: String = "Or"
     override val hiThere: String = "Hi there!"
-    override val getEmailHint: String = "Login or register to your account by entering your email below" //destination
+    override val getEmailHint: String =
+        "Login or register to your account by entering your email below" //destination
     override val continueWithGoogle: String = "Continue with Google"
     override val password: String = "Password"
     override val enterYourPassword: String = "Enter your password"
     override val forgotPassword: String = "Forgot password?"
     override val changeEmail: String = "Change Email"
     override val awesome: String = "Awesome"
-    override val getPasswordDescription: String = "You already have Travelly account,enter it's password to login"
+    override val getPasswordDescription: String =
+        "You already have Travelly account,enter it's password to login"
     override val signUpTitle: String = "Welcome Aboard!"
     override val signingUpWith: String = "signing up with"
-    override val signUpDescription: String = "Create your Travelly account by filling out the form below"
+    override val signUpDescription: String =
+        "Create your Travelly account by filling out the form below"
     override val yourName: String = "Your name"
     override val enterYourName: String = "Enter your name"
     override val newPassword: String = "New Password"
@@ -161,4 +172,9 @@ class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
     override val setNewPhoto: String = "Set New Photo"
     override val name: String = "Name"
     override val bio: String = "Bio"
+    override val recoveryEmailSent: String = "Recovery email"
+    override val weHaveSentARecoveryEmail: String = "We've sent a recovery email at"
+    override val pleaseCheckYourEmail: String =
+        "Please check your email to continue with the recovery process."
+    override val backToLogin: String = "Back to Login"
 }

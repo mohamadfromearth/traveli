@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="ui.auth.emailsent.EmailSentViewModel" />
+
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorBackground0">
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeXX"
+            android:layout_marginTop="50dp"
+            android:text="@{vm.app.m.recoveryEmailSent}"
+            android:textColor="?attr/colorText0"
+            android:textSize="@dimen/textLargeX"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Recovery email" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeX"
+            android:layout_marginTop="@dimen/paddingLarge"
+            android:text="@{vm.app.m.weHaveSentARecoveryEmail}"
+            android:textColor="?attr/colorText2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            tools:text="Weve sent a recovery email to your email at" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_email"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeX"
+            android:text="mamady@gmail.com"
+            android:textColor="?attr/colorText0"
+            android:textSize="@dimen/textLargeX"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_description" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_description_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeX"
+            android:text="@{vm.app.m.pleaseCheckYourEmail}"
+            android:textColor="?attr/colorText2"
+            android:textSize="@dimen/textLarge"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_email"
+            tools:text="Please check your email address" />
+
+
+        <ImageView
+            android:id="@+id/iv_back_to_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeX"
+            android:src="@drawable/ic_arrow_left"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorText0" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_back_to_login"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingSmall"
+            android:text="@{vm.app.m.backToLogin}"
+            android:textColor="?attr/colorText0"
+            android:textSize="@dimen/textLargeX"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_back_to_login"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Back to Login" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
+

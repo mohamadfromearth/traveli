@@ -168,7 +168,7 @@
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:layout_marginTop="@dimen/paddingMedium"
-            app:layout_constraintTop_toBottomOf="tv_bio_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_bio_content"
 
 
             />

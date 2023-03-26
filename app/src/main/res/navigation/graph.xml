@@ -97,7 +97,11 @@
     <fragment
         android:id="@+id/signUpFragment"
         android:name="ui.auth.signup.SignUpFragment"
-        android:label="SignUpFragment" />
+        android:label="SignUpFragment" >
+        <action
+            android:id="@+id/action_signUpFragment_to_emailSentFragment"
+            app:destination="@id/emailSentFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="ui.profile.ProfileFragment"
@@ -110,5 +114,9 @@
         android:id="@+id/profileEditFragment"
         android:name="ui.profileEdit.ProfileEditFragment"
         android:label="ProfileEditFragment" />
+    <fragment
+        android:id="@+id/emailSentFragment"
+        android:name="ui.auth.emailsent.EmailSentFragment"
+        android:label="EmailSentFragment" />
 
 </navigation>

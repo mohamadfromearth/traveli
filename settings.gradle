@@ -22,7 +22,7 @@ dependencyResolutionManagement {
                  ** gpr.usr=GITHUB_USER_ID & gpr.key=PERSONAL_ACCESS_TOKEN
                  ** Or set env variable GPR_USER & GPR_API_KEY if not adding a properties file**/
                 username = "89387136"
-                password = "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"
+                password = "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"
             }
         }
     }
