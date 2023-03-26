@@ -25,7 +25,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpEvent, SignUpAc
     }
 
 
-    private fun setUpViews(){
+    private fun setUpViews() {
         binding.btnContinue.setOnClickListener {
             viewModel.action.onContinueClick("")
         }
@@ -40,7 +40,4 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpEvent, SignUpAc
             }
         }
     }
-
-
-
 }

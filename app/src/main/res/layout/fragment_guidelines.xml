@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+            name="vm"
+            type="ui.auth.guideLines.GuideLinesViewModel" />
+
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorBackground0"
+        xmlns:tools="http://schemas.android.com/tools"
+        >
+
+
+        <ImageView
+            android:id="@+id/iv_travelly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/union_white"
+            android:layout_marginTop="@dimen/paddingLargeXXXXX"
+            android:layout_marginStart="@dimen/paddingLargeXX"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_our_guide_lines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_travelly"
+            android:layout_marginStart="@dimen/paddingLargeXX"
+            tools:text="Our Guidelines"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_marginTop="@dimen/paddingLargeXXXXX"
+            />
+
+
+
+        
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
+
+

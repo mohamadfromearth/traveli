@@ -48,11 +48,8 @@ class OnBoardingFragment : BaseFragment<FragmentOnboardingBinding, OnBoardingEve
     }
 
     private fun setUpOnBoardingPager() {
-
         onBoardingPagerAdapter = OnBoardingPagerAdapter(parentFragmentManager, onSkipClick = {}, baseActivity = baseActivity)
         binding.pager.adapter = onBoardingPagerAdapter
-
-
     }
 
 
