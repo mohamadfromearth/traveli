@@ -58,6 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/paddingLarge"
             android:text="@{vm.app.m.setNewPhoto}"
+            fonti="@{vm.app.m.fontMedium}"
             android:textColor="@color/md_light_blue_A150"
             android:textSize="@dimen/textLargeX"
             app:layout_constraintEnd_toEndOf="parent"
@@ -81,6 +82,7 @@
             android:layout_marginStart="@dimen/paddingLargeXX"
             android:layout_marginTop="@dimen/paddingMedium"
             android:text="@{vm.app.m.name}"
+            android:textColor="?attr/colorText0"
             android:textSize="@dimen/textLargeX"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/separator1"
@@ -92,6 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
+            android:textColor="?attr/colorText0"
             android:layout_marginTop="@dimen/paddingMedium"
             android:text="Tony stark"
             android:textSize="@dimen/textLargeX"
@@ -113,6 +116,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/paddingLargeXX"
             android:layout_marginTop="@dimen/paddingMedium"
+            android:textColor="?attr/colorText0"
             android:text="@{vm.app.m.email}"
             android:textSize="@dimen/textLargeX"
             app:layout_constraintStart_toStartOf="parent"
@@ -123,6 +127,7 @@
             android:id="@+id/tv_email_content"
             fonti="@{vm.app.m.fontMedium}"
             android:layout_width="wrap_content"
+            android:textColor="?attr/colorText0"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/paddingMedium"
             android:text="TonyStark@gmail.com"
@@ -146,6 +151,7 @@
             android:layout_marginStart="@dimen/paddingLargeXX"
             android:layout_marginTop="@dimen/paddingMedium"
             android:text="@{vm.app.m.bio}"
+            android:textColor="?attr/colorText0"
             android:textSize="@dimen/textLargeX"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/separator3"
@@ -155,6 +161,7 @@
             android:id="@+id/tv_bio_content"
             fonti="@{vm.app.m.fontMedium}"
             android:layout_width="0dp"
+            android:textColor="?attr/colorText0"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/paddingMedium"
             android:text="a happy traveller blogger  mom"
@@ -168,10 +175,73 @@
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:layout_marginTop="@dimen/paddingMedium"
-            app:layout_constraintTop_toBottomOf="@id/tv_bio_content"
+            android:background="?attr/colorSeparator"
+            app:layout_constraintTop_toBottomOf="@id/tv_bio_content" />
 
-
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_links"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeXX"
+            android:layout_marginTop="@dimen/paddingMedium"
+            android:text="@{vm.app.m.links}"
+            android:textColor="?attr/colorText0"
+            android:textSize="@dimen/textLargeX"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/separator4"
+            tools:text="Links"
+            fonti="@{vm.app.m.fontMedium}"
             />
+
+        <ImageView
+            android:id="@+id/iv_links_count"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/separator4"
+            android:src="@drawable/ic_arrow_right"
+            android:layout_marginEnd="@dimen/paddingLargeXX"
+            app:layout_constraintBottom_toTopOf="@id/separator5"
+            app:tint="?attr/colorText2"
+            />
+        
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_links_count"
+            android:layout_width="wrap_content"
+            android:textColor="?attr/colorText0"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/iv_links_count"
+            app:layout_constraintTop_toTopOf="@id/iv_links_count"
+            app:layout_constraintBottom_toBottomOf="@id/iv_links_count"
+            android:text="2"
+            fonti="@{vm.app.m.fontMedium}"
+            android:textSize="@dimen/textLarge"
+            />
+
+        <View
+            android:id="@+id/separator5"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/paddingMedium"
+            android:background="?attr/colorSeparator"
+            app:layout_constraintTop_toBottomOf="@id/tv_links"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/separator5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/paddingLargeXX"
+            android:textSize="@dimen/textLarge"
+            android:textColor="@color/md_red_A650"
+            android:text="@{vm.app.m.logOut}"
+            tools:text="Log out"
+            />
+
+
+        
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

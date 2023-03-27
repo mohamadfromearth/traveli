@@ -150,6 +150,15 @@ interface LanguageInterface {
     val newPassword: String
     val repeatNewPassword: String
     val repeatYourPassword: String
+    val recoveryEmailSent: String
+    val weHaveSentARecoveryEmail: String
+    val pleaseCheckYourEmail: String
+    val backToLogin: String
+    val learnMore: String
+    val acceptAndContinue: String
+    val decline: String
+    val ourGuideLines: String
+    val guideLinesTitle: String
 
     //profile
     val edit: String
@@ -164,15 +173,9 @@ interface LanguageInterface {
     val setNewPhoto: String
     val name: String
     val bio: String
-    val recoveryEmailSent: String
-    val weHaveSentARecoveryEmail: String
-    val pleaseCheckYourEmail: String
-    val backToLogin: String
-    val learnMore: String
-    val acceptAndContinue: String
-    val decline: String
-    val ourGuideLines: String
-    val guideLinesTitle:String
+    val links: String
+    val logOut:String
+
 
     fun priceCannotBeLowerThanX(value: String) =
         "$priceCannotBeLowerThanX1 $value $priceCannotBeLowerThanX2"

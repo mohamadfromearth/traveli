@@ -160,6 +160,16 @@ class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
     override val repeatYourPassword: String = "Repeat your password"
     override val transaction: String = "Transaction"
     override val changePassword: String = "Change Password"
+    override val recoveryEmailSent: String = "Recovery email"
+    override val weHaveSentARecoveryEmail: String = "We've sent a recovery email at"
+    override val pleaseCheckYourEmail: String =
+        "Please check your email to continue with the recovery process."
+    override val backToLogin: String = "Back to Login"
+    override val learnMore:String = "Learn More"
+    override val acceptAndContinue:String = "Accept and Continue"
+    override val decline: String = "Decline"
+    override val ourGuideLines:String = "Our GuideLines"
+    override val guideLinesTitle: String = "Travelly is a travel experience sharing platform"
 
     //profile
     override val edit: String = "Edit"
@@ -172,14 +182,7 @@ class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
     override val setNewPhoto: String = "Set New Photo"
     override val name: String = "Name"
     override val bio: String = "Bio"
-    override val recoveryEmailSent: String = "Recovery email"
-    override val weHaveSentARecoveryEmail: String = "We've sent a recovery email at"
-    override val pleaseCheckYourEmail: String =
-        "Please check your email to continue with the recovery process."
-    override val backToLogin: String = "Back to Login"
-    override val learnMore:String = "Learn More"
-    override val acceptAndContinue:String = "Accept and Continue"
-    override val decline: String = "Decline"
-    override val ourGuideLines:String = "Our GuideLines"
-    override val guideLinesTitle: String = "Travelly is a travel experience sharing platform"
+    override val links:String = "Links"
+    override val logOut: String = "Log out"
+
 }
