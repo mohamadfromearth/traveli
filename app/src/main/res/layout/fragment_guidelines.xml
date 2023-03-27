@@ -14,39 +14,117 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="?attr/colorBackground0"
-        xmlns:tools="http://schemas.android.com/tools"
-        >
+        android:background="?attr/colorBackground0">
 
 
         <ImageView
             android:id="@+id/iv_travelly"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeXX"
+            android:layout_marginTop="@dimen/paddingLargeXXXXX"
+            android:src="@drawable/union_white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/union_white"
-            android:layout_marginTop="@dimen/paddingLargeXXXXX"
-            android:layout_marginStart="@dimen/paddingLargeXX"
-            />
+            app:tint="?attr/colorText0" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_our_guide_lines"
+            fonti="@{vm.app.m.fontMedium}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeXX"
+            android:layout_marginTop="@dimen/paddingLargeXXXXX"
+            android:text="@{vm.app.m.ourGuideLines}"
+            android:textColor="?attr/colorText0"
+            android:textSize="@dimen/textLargeX"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_travelly"
-            android:layout_marginStart="@dimen/paddingLargeXX"
-            tools:text="Our Guidelines"
+            tools:text="Our Guidelines" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title"
             fonti="@{vm.app.m.fontMedium}"
-            android:layout_marginTop="@dimen/paddingLargeXXXXX"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeXX"
+            android:layout_marginTop="@dimen/paddingLargeXX"
+            android:text="@{vm.app.m.guideLinesTitle}"
+            android:textColor="?attr/colorText0"
+            android:textSize="@dimen/textLargeXX"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_our_guide_lines"
+            tools:text="Travelly is travel experience Sharing platform" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_description"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/paddingLargeXX"
+            android:layout_marginTop="@dimen/paddingLargeXX"
+            android:text="Its time to focus in what we are gonna build not how to build it
+Its time to focus in what we are gonna build not how to build it
+Its time to focus in what we are gonna build not how to build it
+Its time to focus in what we are gonna build not how to build it
+Its time to focus in what we are gonna build not how to build it
+Its time to focus in what we are gonna build not how to build it
+Its time to focus in what we are gonna build not how to build it
+Its time to focus in what we are gonna build not how to build it
+Its time to focus in what we are gonna build not how to build it
+Its time to focus in what we are gonna build not how to build it
+"
+            android:textColor="?attr/colorText2"
+            android:textSize="@dimen/textLarge"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_learn_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/paddingLargeXX"
+            android:layout_marginTop="@dimen/paddingLargeXX"
+            android:text="@{vm.app.m.learnMore}"
+            android:textSize="@dimen/textLargeX"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description"
+            tools:text="Learn More" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_accept_and_continue"
+            style="@style/GeneralButton"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginHorizontal="@dimen/paddingLargeXX"
+            android:layout_marginTop="@dimen/paddingLargeXX"
+            android:textColor="?attr/colorBackground0"
+            android:backgroundTint="?attr/colorText0"
+            android:text="@{vm.app.m.acceptAndContinue}"
+            app:layout_constraintTop_toBottomOf="@+id/tv_learn_more" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_decline"
+            fonti="@{vm.app.m.fontMedium}"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="@dimen/paddingLargeXX"
+            android:layout_marginTop="@dimen/paddingLargeX"
+            android:background="@drawable/btn_border"
+            android:gravity="center_vertical|center_horizontal"
+            android:paddingHorizontal="@dimen/paddingLargeXX"
+            android:text="@{vm.app.m.decline}"
+            android:textAllCaps="false"
+            android:textColor="?attr/colorText0"
+            app:layout_constraintTop_toBottomOf="@+id/btn_accept_and_continue"
+
+
             />
-
-
-
-        
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

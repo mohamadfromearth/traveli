@@ -177,4 +177,9 @@ class LanguageEN(private val app: ApplicationClass) : LanguageInterface {
     override val pleaseCheckYourEmail: String =
         "Please check your email to continue with the recovery process."
     override val backToLogin: String = "Back to Login"
+    override val learnMore:String = "Learn More"
+    override val acceptAndContinue:String = "Accept and Continue"
+    override val decline: String = "Decline"
+    override val ourGuideLines:String = "Our GuideLines"
+    override val guideLinesTitle: String = "Travelly is a travel experience sharing platform"
 }

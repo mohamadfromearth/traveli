@@ -168,6 +168,11 @@ interface LanguageInterface {
     val weHaveSentARecoveryEmail: String
     val pleaseCheckYourEmail: String
     val backToLogin: String
+    val learnMore: String
+    val acceptAndContinue: String
+    val decline: String
+    val ourGuideLines: String
+    val guideLinesTitle:String
 
     fun priceCannotBeLowerThanX(value: String) =
         "$priceCannotBeLowerThanX1 $value $priceCannotBeLowerThanX2"

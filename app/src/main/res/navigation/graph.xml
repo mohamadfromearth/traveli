@@ -101,6 +101,9 @@
         <action
             android:id="@+id/action_signUpFragment_to_emailSentFragment"
             app:destination="@id/emailSentFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_guideLinesFragment"
+            app:destination="@id/guideLinesFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -118,5 +121,9 @@
         android:id="@+id/emailSentFragment"
         android:name="ui.auth.emailsent.EmailSentFragment"
         android:label="EmailSentFragment" />
+    <fragment
+        android:id="@+id/guideLinesFragment"
+        android:name="ui.auth.guideLines.GuideLinesFragment"
+        android:label="GuideLinesFragment" />
 
 </navigation>
